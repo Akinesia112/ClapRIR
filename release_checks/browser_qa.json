@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "choicesChecked": 336,
+  "rooms": 7,
+  "pairedPhoneExamples": 280,
+  "decodedListeningFiles": [
+    {
+      "file": "audio/phone_recordings/medium_size_meeting_room/P1_r3.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/inferred_rirs/medium_size_meeting_room/P1_r3.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/phone_recordings/medium_size_meeting_room/P2_r1.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/inferred_rirs/medium_size_meeting_room/P2_r1.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/phone_recordings/medium_size_meeting_room/P3_r2.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/inferred_rirs/medium_size_meeting_room/P3_r2.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/phone_recordings/highly_reverberant_hallway/P1_r3.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/inferred_rirs/highly_reverberant_hallway/P1_r3.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/phone_recordings/highly_reverberant_hallway/P2_r5.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/inferred_rirs/highly_reverberant_hallway/P2_r5.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/phone_recordings/highly_reverberant_hallway/P3_r3.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    },
+    {
+      "file": "audio/inferred_rirs/highly_reverberant_hallway/P3_r3.wav",
+      "channels": 1,
+      "sampleRate": 44100,
+      "duration": 1,
+      "peak": 0.8912509083747864
+    }
+  ],
+  "nativePlayback": {
+    "currentTime": 0.012016,
+    "error": null
+  },
+  "pageErrors": [],
+  "localHttpFailures": [],
+  "desktopOverflow": false,
+  "mobileOverflow": false,
+  "brokenLoadedImages": []
+}

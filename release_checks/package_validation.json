@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "manifest_assets": 647,
+  "bundle_files": 649,
+  "local_html_links_checked": 123,
+  "largest_asset_bytes": 18320704,
+  "phone_examples": 280,
+  "room_photos": 13,
+  "listening_zip_sha256": "552f0603ff15b8fd0ee94ad9b4ead4af12e6191942f238134b2e6f11782fe9fa",
+  "target_repository": "https://github.com/Akinesia112/ClapRIR",
+  "site_directory": "docs"
+}

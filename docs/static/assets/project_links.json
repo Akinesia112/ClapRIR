@@ -1,0 +1,12 @@
+{
+  "project_website": "https://akinesia112.github.io/ClapRIR/",
+  "website_repository": "https://github.com/Akinesia112/ClapRIR",
+  "code_repository": "https://github.com/Akinesia112/ClapRIR",
+  "dataset_download": null,
+  "paper_preprint": null,
+  "model_checkpoint_download": null,
+  "source_code_license_path": "dataset/source_code_LICENSE.txt",
+  "dataset_audio_license": null,
+  "provenance": "Website destination changed to Akinesia112/ClapRIR at the user request. Missing dataset/paper/model release URLs remain null.",
+  "original_template_repository": "https://github.com/AaltoAcousticsLab/clapRIR-demo"
+}

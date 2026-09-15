@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "phone_examples": 280,
+  "phone_wavs": 560,
+  "rooms": 7,
+  "modes": 8,
+  "repetitions_per_cell": 5,
+  "paper_examples": 16,
+  "paper_arrays_exact_match": true,
+  "slack_examples": 6,
+  "slack_wavs": 12,
+  "sample_rate": 44100,
+  "all_audio_mono": true,
+  "all_audio_finite": true,
+  "no_export_clipping": true,
+  "playback_peak_dbfs": -1,
+  "new_inferences": 0,
+  "checkpoint": "/project/g_robin/akinesia112/clapgen/runs/matched_reg_1s/hybrid_shoebox_mit_but_ace_1000ms_full_c1_vm_seed42001/model_updates20000.pt",
+  "checkpoint_sha256": "fa83b4108777231ef557379e8f7478aea1ab63f3e95449382edeaf85442d87fc",
+  "selection_sha256": "a5f0112b6e5d6f54bf90aa5e5bbfb1c92fa49304e19ed9bb9e04dcfe30f02191",
+  "input_sha256": "02e1ddd6aa7cdce6580bbf81dc8f8f7727dd96ab988c547d9ab071acc47108a7",
+  "prediction_sha256": "5e6b726b636e0301ff942c28111a3a4c4335e8ddc1c8afb825f7ca1e7641d96e",
+  "selected_sources": [
+    {
+      "room": "Medium-size meeting room",
+      "mode": "P1",
+      "repetition": 3,
+      "event_index": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev02_P1_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 0,
+      "valid_input_samples": 44100
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "P2",
+      "repetition": 1,
+      "event_index": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev05_P2_r1.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 1,
+      "valid_input_samples": 44100
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "P3",
+      "repetition": 2,
+      "event_index": 11,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev11_P3_r2.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 2,
+      "valid_input_samples": 44100
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "P1",
+      "repetition": 3,
+      "event_index": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev02_P1_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 8,
+      "valid_input_samples": 44100
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "P2",
+      "repetition": 5,
+      "event_index": 9,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev09_P2_r5.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 9,
+      "valid_input_samples": 44100
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "P3",
+      "repetition": 3,
+      "event_index": 12,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev12_P3_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 10,
+      "valid_input_samples": 44100
+    }
+  ]
+}

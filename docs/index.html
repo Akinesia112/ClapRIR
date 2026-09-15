@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore phone-recorded handclaps and estimated room impulse responses across seven rooms, with listening examples, spectrograms and room photographs.">
+<meta name="author" content="Shih-Yu Lai, Kyung Yun Lee, Nils Meyer-Kahlen, Eloi Moliner, Bing-Yu Chen, Sebastian J. Schlecht, Vesa Välimäki">
+<meta name="keywords" content="handclap, room impulse response, acoustics, reverberation, neural regression">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Aalto Acoustics Lab">
+<meta property="og:title" content="ClapRIR: Estimation of Room Impulse Responses from Handclaps"><meta property="og:description" content="Explore phone-recorded handclaps and estimated room impulse responses across seven rooms, with listening examples, spectrograms and room photographs.">
+<meta property="og:url" content="https://akinesia112.github.io/ClapRIR/"><meta property="og:image" content="https://akinesia112.github.io/ClapRIR/static/assets/figures/spectra/phone_rooms_spectra_10khz.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ClapRIR: Estimation of Room Impulse Responses from Handclaps">
+<meta name="twitter:description" content="Explore phone-recorded handclaps and estimated room impulse responses across seven rooms, with listening examples, spectrograms and room photographs."><link rel="canonical" href="https://akinesia112.github.io/ClapRIR/">
+
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+
+  <title>ClapRIR: Estimation of Room Impulse Responses from Handclaps</title>
+
+
+
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "ClapRIR: Estimation of Room Impulse Responses from Handclaps", "url": "https://akinesia112.github.io/ClapRIR/", "description": "Explore phone-recorded handclaps and estimated room impulse responses across seven rooms, with listening examples, spectrograms and room photographs.", "author": [{"@type": "Person", "name": "Shih-Yu Lai"}, {"@type": "Person", "name": "Kyung Yun Lee"}, {"@type": "Person", "name": "Nils Meyer-Kahlen"}, {"@type": "Person", "name": "Eloi Moliner"}, {"@type": "Person", "name": "Bing-Yu Chen"}, {"@type": "Person", "name": "Sebastian J. Schlecht"}, {"@type": "Person", "name": "Vesa Välimäki"}], "image": "https://akinesia112.github.io/ClapRIR/static/assets/figures/spectra/phone_rooms_spectra_10khz.png"}</script>
+<script defer src="static/js/phone-demo.js"></script>
+</head><body>
+<button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+<div class="more-works-container">
+<button class="more-works-btn" onclick="toggleMoreWorks()" title="Project links"><i class="fas fa-flask"></i> Project links <i class="fas fa-chevron-down dropdown-arrow"></i></button>
+<div class="more-works-dropdown" id="moreWorksDropdown"><div class="dropdown-header"><h4>ClapRIR resources</h4><button class="close-btn" onclick="toggleMoreWorks()" aria-label="Close project links"><i class="fas fa-times"></i></button></div>
+<div class="works-list">
+<a class="work-item" href="https://github.com/Akinesia112/ClapRIR" target="_blank" rel="noopener"><div class="work-info"><h5>Code repository</h5><p>Project code and release information.</p></div><i class="fas fa-external-link-alt"></i></a>
+<a class="work-item" href="static/audio_examples.zip"><div class="work-info"><h5>Listening examples</h5><p>Six paper-selected recording / inferred-RIR pairs.</p></div><i class="fas fa-download"></i></a>
+<a class="work-item" href="#dataset"><div class="work-info"><h5>Anechoic handclaps</h5><p>Dataset context and examples from five participants.</p></div></a>
+</div></div></div>
+<main id="main-content">
+<section class="hero"><div class="hero-body"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column has-text-centered">
+<h1 class="title is-1 publication-title">Estimation of Room Impulse Responses from Handclaps</h1>
+<div class="is-size-5 publication-authors">
+<span class="author-block">Shih-Yu Lai<sup>1,2,3</sup>,</span>
+<span class="author-block">Kyung Yun Lee<sup>2</sup>,</span>
+<span class="author-block">Nils Meyer-Kahlen<sup>2</sup>,</span>
+<span class="author-block">Eloi Moliner<sup>2</sup>,</span>
+<span class="author-block">Bing-Yu Chen<sup>1</sup>,</span>
+<span class="author-block">Sebastian J. Schlecht<sup>4</sup>,</span>
+<span class="author-block">Vesa Välimäki<sup>2</sup></span>
+</div>
+<div class="is-size-5 publication-authors">
+<span class="author-block"><sup>1</sup>National Taiwan University &nbsp; <sup>2</sup>Aalto University</span><br>
+<span class="author-block"><sup>3</sup>MoonShine Animation Studio &nbsp; <sup>4</sup>Friedrich-Alexander-Universität Erlangen-Nürnberg</span>
+</div>
+<div class="column has-text-centered"><div class="publication-links">
+<span class="link-block"><a href="#phone-demo" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-headphones"></i></span><span>Listen</span></a></span>
+<span class="link-block"><a href="https://github.com/Akinesia112/ClapRIR" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+<span class="link-block"><a href="static/audio_examples.zip" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-download"></i></span><span>Audio examples</span></a></span>
+<span class="link-block"><a href="#dataset" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-database"></i></span><span>Dataset</span></a></span>
+</div></div>
+</div></div></div></div></section>
+<section class="hero teaser"><div class="container is-max-desktop"><div class="hero-body">
+<a href="static/assets/figures/spectra/phone_rooms_spectra_10khz.pdf"><img src="static/assets/figures/spectra/phone_rooms_spectra_10khz.png" alt="Recorded phone-clap spectra and inferred-RIR spectra in the medium-size meeting room and highly reverberant hallway"></a>
+<h2 class="subtitle has-text-centered">Eight handclap modes, two rooms. Recorded handclap spectra (left) and corresponding one-second RIR estimates (right).</h2>
+</div></div></section>
+<section class="section hero is-light"><div class="container is-max-desktop"><div class="columns is-centered has-text-centered"><div class="column is-four-fifths">
+<h2 class="title is-3">From a handclap to a room response</h2>
+<div class="content has-text-justified"><p>Handclaps offer an equipment-free excitation for room acoustics, but the source waveform varies with the person and hand configuration. We study supervised estimation of a one-second room impulse response (RIR) from a reverberant handclap, using controlled training pairs made with recorded anechoic handclaps and RIRs.</p>
+<p>This page provides additional real phone-recording examples for listening and visual inspection. The phone recordings have no paired reference RIR, so these examples illustrate model behavior and do not establish reconstruction accuracy.</p></div>
+</div></div></div></section>
+<section class="section" id="phone-demo"><div class="container is-max-desktop">
+<h2 class="title is-3">Listen: phone claps and inferred RIRs</h2>
+<div class="content"><p>iPhone 15 recordings from seven rooms, originally at 48 kHz and resampled to 44.1 kHz. Every room contains eight protocol modes with five repetitions each. The default example for each room and mode is the existing unclipped recording with the highest pre-handclap SNR, selected using only the input.</p>
+<p>Both players use the original one-second model interval. Each WAV is independently peak-normalized to −1 dBFS <strong>for listening only</strong>; no denoising or filtering is applied. Listen for the onset and decay of each inferred response, and compare the two rooms. There is no paired reference RIR.</p>
+<p><a href="static/audio_examples.zip">Download the six paper-selected P1/P2/P3 pairs (ZIP)</a> · <a href="static/assets/phone_demo/all_rooms/recording_inventory.csv">Recording inventory</a></p></div>
+<div class="columns is-multiline"><div class="column is-half"><article class="box phone-room" data-room-id="1" id="room-1">
+<h3 class="title is-4">Medium-size meeting room</h3>
+<figure class="image"><a href="static/assets/room_photos/medium_size_meeting_room_01.jpeg"><img src="static/assets/room_photos/medium_size_meeting_room_01.jpeg" loading="lazy" alt="Medium-size meeting room — documented phone-recording room"></a></figure>
+<div class="field is-grouped is-grouped-multiline mt-4">
+<div class="control"><label class="label" for="mode-1">Clap mode</label><div class="select"><select id="mode-1" class="clap-mode"><option value="P1">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A1-">A1-</option><option value="A1+">A1+</option></select></div></div>
+<div class="control"><label class="label" for="repeat-1">Recording</label><div class="select"><select id="repeat-1" class="clap-repeat"><option value="selected">Input-selected example</option><option value="1">Repetition 1</option><option value="2">Repetition 2</option><option value="3">Repetition 3</option><option value="4">Repetition 4</option><option value="5">Repetition 5</option></select></div></div></div>
+<p class="example-caption mb-4" aria-live="polite">P1 · repetition 3 · input-selected example</p>
+<div class="field"><label class="label" for="recorded-1">Recorded phone clap</label><audio id="recorded-1" class="recorded-audio" controls preload="none" style="width:100%" src="static/assets/audio/phone_recordings/medium_size_meeting_room/P1_r3.wav"></audio></div>
+<div class="field"><label class="label" for="inferred-1">Inferred RIR</label><audio id="inferred-1" class="inferred-audio" controls preload="none" style="width:100%" src="static/assets/audio/inferred_rirs/medium_size_meeting_room/P1_r3.wav"></audio></div>
+<p class="is-size-7"><a class="download-recorded" href="static/assets/audio/phone_recordings/medium_size_meeting_room/P1_r3.wav" download>Download recording</a> · <a class="download-inferred" href="static/assets/audio/inferred_rirs/medium_size_meeting_room/P1_r3.wav" download>Download inferred RIR</a></p>
+<details class="mt-4"><summary>Spectrogram overview: selected P1/P2/P3</summary>
+<a href="static/assets/figures/spectrograms/medium_size_meeting_room_P1_P2_P3.png"><img src="static/assets/figures/spectrograms/medium_size_meeting_room_P1_P2_P3.png" loading="lazy" alt="Medium-size meeting room: recorded and inferred spectrograms for input-selected P1, P2 and P3"></a>
+<p class="is-size-7">Top: recorded claps. Bottom: inferred RIRs. Fixed input-selected examples, 0–0.9 s and 0.1–10 kHz, with a shared color scale.</p>
+<p><a href="static/assets/figures/spectrograms/medium_size_meeting_room_8modes.png">All eight modes</a> · <a href="static/assets/figures/spectra/medium_size_meeting_room_10khz.png">Room spectra</a></p>
+</details></article></div><div class="column is-half"><article class="box phone-room" data-room-id="2" id="room-2">
+<h3 class="title is-4">Highly reverberant hallway</h3>
+<figure class="image"><a href="static/assets/room_photos/highly_reverberant_hallway_01.jpeg"><img src="static/assets/room_photos/highly_reverberant_hallway_01.jpeg" loading="lazy" alt="Highly reverberant hallway — documented phone-recording room"></a></figure>
+<div class="field is-grouped is-grouped-multiline mt-4">
+<div class="control"><label class="label" for="mode-2">Clap mode</label><div class="select"><select id="mode-2" class="clap-mode"><option value="P1">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A1-">A1-</option><option value="A1+">A1+</option></select></div></div>
+<div class="control"><label class="label" for="repeat-2">Recording</label><div class="select"><select id="repeat-2" class="clap-repeat"><option value="selected">Input-selected example</option><option value="1">Repetition 1</option><option value="2">Repetition 2</option><option value="3">Repetition 3</option><option value="4">Repetition 4</option><option value="5">Repetition 5</option></select></div></div></div>
+<p class="example-caption mb-4" aria-live="polite">P1 · repetition 3 · input-selected example</p>
+<div class="field"><label class="label" for="recorded-2">Recorded phone clap</label><audio id="recorded-2" class="recorded-audio" controls preload="none" style="width:100%" src="static/assets/audio/phone_recordings/highly_reverberant_hallway/P1_r3.wav"></audio></div>
+<div class="field"><label class="label" for="inferred-2">Inferred RIR</label><audio id="inferred-2" class="inferred-audio" controls preload="none" style="width:100%" src="static/assets/audio/inferred_rirs/highly_reverberant_hallway/P1_r3.wav"></audio></div>
+<p class="is-size-7"><a class="download-recorded" href="static/assets/audio/phone_recordings/highly_reverberant_hallway/P1_r3.wav" download>Download recording</a> · <a class="download-inferred" href="static/assets/audio/inferred_rirs/highly_reverberant_hallway/P1_r3.wav" download>Download inferred RIR</a></p>
+<details class="mt-4"><summary>Spectrogram overview: selected P1/P2/P3</summary>
+<a href="static/assets/figures/spectrograms/highly_reverberant_hallway_P1_P2_P3.png"><img src="static/assets/figures/spectrograms/highly_reverberant_hallway_P1_P2_P3.png" loading="lazy" alt="Highly reverberant hallway: recorded and inferred spectrograms for input-selected P1, P2 and P3"></a>
+<p class="is-size-7">Top: recorded claps. Bottom: inferred RIRs. Fixed input-selected examples, 0–0.9 s and 0.1–10 kHz, with a shared color scale.</p>
+<p><a href="static/assets/figures/spectrograms/highly_reverberant_hallway_8modes.png">All eight modes</a> · <a href="static/assets/figures/spectra/highly_reverberant_hallway_10khz.png">Room spectra</a></p>
+</details></article></div></div>
+<h3 class="title is-4 mt-6">More rooms</h3><p class="mb-4">The same input-selection rule and frozen Regression model are used for the remaining rooms. All five repetitions are available through each recording menu.</p><details class="mb-4"><summary class="title is-5">Small PC room</summary><article class="box phone-room" data-room-id="3" id="room-3">
+<h3 class="title is-4">Small PC room</h3>
+<figure class="image"><a href="static/assets/room_photos/small_pc_room_01.jpeg"><img src="static/assets/room_photos/small_pc_room_01.jpeg" loading="lazy" alt="Small PC room — documented phone-recording room"></a></figure>
+<div class="field is-grouped is-grouped-multiline mt-4">
+<div class="control"><label class="label" for="mode-3">Clap mode</label><div class="select"><select id="mode-3" class="clap-mode"><option value="P1">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A1-">A1-</option><option value="A1+">A1+</option></select></div></div>
+<div class="control"><label class="label" for="repeat-3">Recording</label><div class="select"><select id="repeat-3" class="clap-repeat"><option value="selected">Input-selected example</option><option value="1">Repetition 1</option><option value="2">Repetition 2</option><option value="3">Repetition 3</option><option value="4">Repetition 4</option><option value="5">Repetition 5</option></select></div></div></div>
+<p class="example-caption mb-4" aria-live="polite">P1 · repetition 1 · input-selected example</p>
+<div class="field"><label class="label" for="recorded-3">Recorded phone clap</label><audio id="recorded-3" class="recorded-audio" controls preload="none" style="width:100%" src="static/assets/audio/phone_recordings/small_pc_room/P1_r1.wav"></audio></div>
+<div class="field"><label class="label" for="inferred-3">Inferred RIR</label><audio id="inferred-3" class="inferred-audio" controls preload="none" style="width:100%" src="static/assets/audio/inferred_rirs/small_pc_room/P1_r1.wav"></audio></div>
+<p class="is-size-7"><a class="download-recorded" href="static/assets/audio/phone_recordings/small_pc_room/P1_r1.wav" download>Download recording</a> · <a class="download-inferred" href="static/assets/audio/inferred_rirs/small_pc_room/P1_r1.wav" download>Download inferred RIR</a></p>
+<details class="mt-4"><summary>Spectrogram overview: selected P1/P2/P3</summary>
+<a href="static/assets/figures/spectrograms/small_pc_room_P1_P2_P3.png"><img src="static/assets/figures/spectrograms/small_pc_room_P1_P2_P3.png" loading="lazy" alt="Small PC room: recorded and inferred spectrograms for input-selected P1, P2 and P3"></a>
+<p class="is-size-7">Top: recorded claps. Bottom: inferred RIRs. Fixed input-selected examples, 0–0.9 s and 0.1–10 kHz, with a shared color scale.</p>
+<p><a href="static/assets/figures/spectrograms/small_pc_room_8modes.png">All eight modes</a> · <a href="static/assets/figures/spectra/small_pc_room_10khz.png">Room spectra</a></p>
+</details></article></details><details class="mb-4"><summary class="title is-5">Bathroom</summary><article class="box phone-room" data-room-id="4" id="room-4">
+<h3 class="title is-4">Bathroom</h3>
+<figure class="image"><a href="static/assets/room_photos/bathroom_01.jpeg"><img src="static/assets/room_photos/bathroom_01.jpeg" loading="lazy" alt="Bathroom — documented phone-recording room"></a></figure>
+<div class="field is-grouped is-grouped-multiline mt-4">
+<div class="control"><label class="label" for="mode-4">Clap mode</label><div class="select"><select id="mode-4" class="clap-mode"><option value="P1">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A1-">A1-</option><option value="A1+">A1+</option></select></div></div>
+<div class="control"><label class="label" for="repeat-4">Recording</label><div class="select"><select id="repeat-4" class="clap-repeat"><option value="selected">Input-selected example</option><option value="1">Repetition 1</option><option value="2">Repetition 2</option><option value="3">Repetition 3</option><option value="4">Repetition 4</option><option value="5">Repetition 5</option></select></div></div></div>
+<p class="example-caption mb-4" aria-live="polite">P1 · repetition 3 · input-selected example</p>
+<div class="field"><label class="label" for="recorded-4">Recorded phone clap</label><audio id="recorded-4" class="recorded-audio" controls preload="none" style="width:100%" src="static/assets/audio/phone_recordings/bathroom/P1_r3.wav"></audio></div>
+<div class="field"><label class="label" for="inferred-4">Inferred RIR</label><audio id="inferred-4" class="inferred-audio" controls preload="none" style="width:100%" src="static/assets/audio/inferred_rirs/bathroom/P1_r3.wav"></audio></div>
+<p class="is-size-7"><a class="download-recorded" href="static/assets/audio/phone_recordings/bathroom/P1_r3.wav" download>Download recording</a> · <a class="download-inferred" href="static/assets/audio/inferred_rirs/bathroom/P1_r3.wav" download>Download inferred RIR</a></p>
+<details class="mt-4"><summary>Spectrogram overview: selected P1/P2/P3</summary>
+<a href="static/assets/figures/spectrograms/bathroom_P1_P2_P3.png"><img src="static/assets/figures/spectrograms/bathroom_P1_P2_P3.png" loading="lazy" alt="Bathroom: recorded and inferred spectrograms for input-selected P1, P2 and P3"></a>
+<p class="is-size-7">Top: recorded claps. Bottom: inferred RIRs. Fixed input-selected examples, 0–0.9 s and 0.1–10 kHz, with a shared color scale.</p>
+<p><a href="static/assets/figures/spectrograms/bathroom_8modes.png">All eight modes</a> · <a href="static/assets/figures/spectra/bathroom_10khz.png">Room spectra</a></p>
+</details></article></details><details class="mb-4"><summary class="title is-5">Medium clubroom</summary><article class="box phone-room" data-room-id="5" id="room-5">
+<h3 class="title is-4">Medium clubroom</h3>
+<figure class="image"><a href="static/assets/room_photos/medium_clubroom_01.jpeg"><img src="static/assets/room_photos/medium_clubroom_01.jpeg" loading="lazy" alt="Medium clubroom — documented phone-recording room"></a></figure>
+<div class="field is-grouped is-grouped-multiline mt-4">
+<div class="control"><label class="label" for="mode-5">Clap mode</label><div class="select"><select id="mode-5" class="clap-mode"><option value="P1">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A1-">A1-</option><option value="A1+">A1+</option></select></div></div>
+<div class="control"><label class="label" for="repeat-5">Recording</label><div class="select"><select id="repeat-5" class="clap-repeat"><option value="selected">Input-selected example</option><option value="1">Repetition 1</option><option value="2">Repetition 2</option><option value="3">Repetition 3</option><option value="4">Repetition 4</option><option value="5">Repetition 5</option></select></div></div></div>
+<p class="example-caption mb-4" aria-live="polite">P1 · repetition 3 · input-selected example</p>
+<div class="field"><label class="label" for="recorded-5">Recorded phone clap</label><audio id="recorded-5" class="recorded-audio" controls preload="none" style="width:100%" src="static/assets/audio/phone_recordings/medium_clubroom/P1_r3.wav"></audio></div>
+<div class="field"><label class="label" for="inferred-5">Inferred RIR</label><audio id="inferred-5" class="inferred-audio" controls preload="none" style="width:100%" src="static/assets/audio/inferred_rirs/medium_clubroom/P1_r3.wav"></audio></div>
+<p class="is-size-7"><a class="download-recorded" href="static/assets/audio/phone_recordings/medium_clubroom/P1_r3.wav" download>Download recording</a> · <a class="download-inferred" href="static/assets/audio/inferred_rirs/medium_clubroom/P1_r3.wav" download>Download inferred RIR</a></p>
+<details class="mt-4"><summary>Spectrogram overview: selected P1/P2/P3</summary>
+<a href="static/assets/figures/spectrograms/medium_clubroom_P1_P2_P3.png"><img src="static/assets/figures/spectrograms/medium_clubroom_P1_P2_P3.png" loading="lazy" alt="Medium clubroom: recorded and inferred spectrograms for input-selected P1, P2 and P3"></a>
+<p class="is-size-7">Top: recorded claps. Bottom: inferred RIRs. Fixed input-selected examples, 0–0.9 s and 0.1–10 kHz, with a shared color scale.</p>
+<p><a href="static/assets/figures/spectrograms/medium_clubroom_8modes.png">All eight modes</a> · <a href="static/assets/figures/spectra/medium_clubroom_10khz.png">Room spectra</a></p>
+</details></article></details><details class="mb-4"><summary class="title is-5">Small clubroom</summary><article class="box phone-room" data-room-id="6" id="room-6">
+<h3 class="title is-4">Small clubroom</h3>
+<figure class="image"><a href="static/assets/room_photos/small_clubroom_01.jpeg"><img src="static/assets/room_photos/small_clubroom_01.jpeg" loading="lazy" alt="Small clubroom — documented phone-recording room"></a></figure>
+<div class="field is-grouped is-grouped-multiline mt-4">
+<div class="control"><label class="label" for="mode-6">Clap mode</label><div class="select"><select id="mode-6" class="clap-mode"><option value="P1">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A1-">A1-</option><option value="A1+">A1+</option></select></div></div>
+<div class="control"><label class="label" for="repeat-6">Recording</label><div class="select"><select id="repeat-6" class="clap-repeat"><option value="selected">Input-selected example</option><option value="1">Repetition 1</option><option value="2">Repetition 2</option><option value="3">Repetition 3</option><option value="4">Repetition 4</option><option value="5">Repetition 5</option></select></div></div></div>
+<p class="example-caption mb-4" aria-live="polite">P1 · repetition 3 · input-selected example</p>
+<div class="field"><label class="label" for="recorded-6">Recorded phone clap</label><audio id="recorded-6" class="recorded-audio" controls preload="none" style="width:100%" src="static/assets/audio/phone_recordings/small_clubroom/P1_r3.wav"></audio></div>
+<div class="field"><label class="label" for="inferred-6">Inferred RIR</label><audio id="inferred-6" class="inferred-audio" controls preload="none" style="width:100%" src="static/assets/audio/inferred_rirs/small_clubroom/P1_r3.wav"></audio></div>
+<p class="is-size-7"><a class="download-recorded" href="static/assets/audio/phone_recordings/small_clubroom/P1_r3.wav" download>Download recording</a> · <a class="download-inferred" href="static/assets/audio/inferred_rirs/small_clubroom/P1_r3.wav" download>Download inferred RIR</a></p>
+<details class="mt-4"><summary>Spectrogram overview: selected P1/P2/P3</summary>
+<a href="static/assets/figures/spectrograms/small_clubroom_P1_P2_P3.png"><img src="static/assets/figures/spectrograms/small_clubroom_P1_P2_P3.png" loading="lazy" alt="Small clubroom: recorded and inferred spectrograms for input-selected P1, P2 and P3"></a>
+<p class="is-size-7">Top: recorded claps. Bottom: inferred RIRs. Fixed input-selected examples, 0–0.9 s and 0.1–10 kHz, with a shared color scale.</p>
+<p><a href="static/assets/figures/spectrograms/small_clubroom_8modes.png">All eight modes</a> · <a href="static/assets/figures/spectra/small_clubroom_10khz.png">Room spectra</a></p>
+</details></article></details><details class="mb-4"><summary class="title is-5">Elevator</summary><article class="box phone-room" data-room-id="7" id="room-7">
+<h3 class="title is-4">Elevator</h3>
+<figure class="image"><a href="static/assets/room_photos/elevator_01.jpeg"><img src="static/assets/room_photos/elevator_01.jpeg" loading="lazy" alt="Elevator — documented phone-recording room"></a></figure>
+<div class="field is-grouped is-grouped-multiline mt-4">
+<div class="control"><label class="label" for="mode-7">Clap mode</label><div class="select"><select id="mode-7" class="clap-mode"><option value="P1">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A1-">A1-</option><option value="A1+">A1+</option></select></div></div>
+<div class="control"><label class="label" for="repeat-7">Recording</label><div class="select"><select id="repeat-7" class="clap-repeat"><option value="selected">Input-selected example</option><option value="1">Repetition 1</option><option value="2">Repetition 2</option><option value="3">Repetition 3</option><option value="4">Repetition 4</option><option value="5">Repetition 5</option></select></div></div></div>
+<p class="example-caption mb-4" aria-live="polite">P1 · repetition 5 · input-selected example</p>
+<div class="field"><label class="label" for="recorded-7">Recorded phone clap</label><audio id="recorded-7" class="recorded-audio" controls preload="none" style="width:100%" src="static/assets/audio/phone_recordings/elevator/P1_r5.wav"></audio></div>
+<div class="field"><label class="label" for="inferred-7">Inferred RIR</label><audio id="inferred-7" class="inferred-audio" controls preload="none" style="width:100%" src="static/assets/audio/inferred_rirs/elevator/P1_r5.wav"></audio></div>
+<p class="is-size-7"><a class="download-recorded" href="static/assets/audio/phone_recordings/elevator/P1_r5.wav" download>Download recording</a> · <a class="download-inferred" href="static/assets/audio/inferred_rirs/elevator/P1_r5.wav" download>Download inferred RIR</a></p>
+<details class="mt-4"><summary>Spectrogram overview: selected P1/P2/P3</summary>
+<a href="static/assets/figures/spectrograms/elevator_P1_P2_P3.png"><img src="static/assets/figures/spectrograms/elevator_P1_P2_P3.png" loading="lazy" alt="Elevator: recorded and inferred spectrograms for input-selected P1, P2 and P3"></a>
+<p class="is-size-7">Top: recorded claps. Bottom: inferred RIRs. Fixed input-selected examples, 0–0.9 s and 0.1–10 kHz, with a shared color scale.</p>
+<p><a href="static/assets/figures/spectrograms/elevator_8modes.png">All eight modes</a> · <a href="static/assets/figures/spectra/elevator_10khz.png">Room spectra</a></p>
+</details></article></details></div></section><section class="hero is-small is-light" id="spectrograms"><div class="hero-body"><div class="container is-max-desktop">
+<h2 class="title is-3">Spectrograms and temporal structure</h2>
+<p class="mb-5">Additional views of the same input-selected examples. Spectrogram power is normalized by each panel’s mean and displayed with one shared −20 to +30 dB scale.</p>
+<div class="columns"><div class="column">
+<h3 class="title is-5">Medium-size meeting room</h3><a href="static/assets/figures/spectrograms/medium_size_meeting_room_8modes.png"><img loading="lazy" src="static/assets/figures/spectrograms/medium_size_meeting_room_P1_P2_P3.png" alt="Medium-size meeting room P1/P2/P3 recorded and inferred spectrograms"></a>
+<p><a href="static/assets/figures/spectrograms/medium_size_meeting_room_8modes.pdf">Eight-mode PDF</a></p></div>
+<div class="column"><h3 class="title is-5">Highly reverberant hallway</h3><a href="static/assets/figures/spectrograms/highly_reverberant_hallway_8modes.png"><img loading="lazy" src="static/assets/figures/spectrograms/highly_reverberant_hallway_P1_P2_P3.png" alt="Highly reverberant hallway P1/P2/P3 recorded and inferred spectrograms"></a>
+<p><a href="static/assets/figures/spectrograms/highly_reverberant_hallway_8modes.pdf">Eight-mode PDF</a></p></div></div>
+<a href="static/assets/figures/waveforms/phone_rooms_P1_P2_P3.pdf"><img loading="lazy" src="static/assets/figures/waveforms/phone_rooms_P1_P2_P3.png" alt="P1 P2 P3 inferred RIR waveforms from both rooms, first 250 milliseconds"></a>
+<p>Representative inferred RIR waveforms over 0–250 ms (P1/P2/P3). Peak normalization is applied independently for visualization only.</p>
+<p class="mt-4">Website spectra use 0.1–10 kHz, 1/12-octave linear-power averaging over the same 0–0.9-s interval, and per-signal mean FFT-bin power normalization over 0.1–10 kHz. All spectral panels share the same dB limits.</p>
+<p><a href="static/assets/figures/spectra/paper_phone_spectra_15khz.pdf">Paper spectra, 15 kHz</a> · <a href="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf">Paper spectra + eight-mode waveforms</a> · <a href="static/assets/figures/spectra/phone_rooms_spectra_20khz_diagnostic.pdf">20-kHz diagnostic</a></p>
+</div></div></section><section class="hero is-small" id="rooms"><div class="hero-body"><div class="container"><h2 class="title is-3">Recording rooms</h2><p class="mb-5">Photographs from the seven phone-recording rooms.</p><div id="room-gallery" class="carousel results-carousel"><div class="item"><img src="static/assets/room_photos/medium_size_meeting_room_01.jpeg" alt="Medium-size meeting room" loading="lazy"><h2 class="subtitle has-text-centered">Medium-size meeting room</h2></div><div class="item"><img src="static/assets/room_photos/medium_size_meeting_room_02.jpeg" alt="Medium-size meeting room" loading="lazy"><h2 class="subtitle has-text-centered">Medium-size meeting room</h2></div><div class="item"><img src="static/assets/room_photos/medium_size_meeting_room_03.jpeg" alt="Medium-size meeting room" loading="lazy"><h2 class="subtitle has-text-centered">Medium-size meeting room</h2></div><div class="item"><img src="static/assets/room_photos/highly_reverberant_hallway_01.jpeg" alt="Highly reverberant hallway" loading="lazy"><h2 class="subtitle has-text-centered">Highly reverberant hallway</h2></div><div class="item"><img src="static/assets/room_photos/highly_reverberant_hallway_02.jpeg" alt="Highly reverberant hallway" loading="lazy"><h2 class="subtitle has-text-centered">Highly reverberant hallway</h2></div><div class="item"><img src="static/assets/room_photos/small_pc_room_01.jpeg" alt="Small PC room" loading="lazy"><h2 class="subtitle has-text-centered">Small PC room</h2></div><div class="item"><img src="static/assets/room_photos/small_pc_room_02.jpeg" alt="Small PC room" loading="lazy"><h2 class="subtitle has-text-centered">Small PC room</h2></div><div class="item"><img src="static/assets/room_photos/bathroom_01.jpeg" alt="Bathroom" loading="lazy"><h2 class="subtitle has-text-centered">Bathroom</h2></div><div class="item"><img src="static/assets/room_photos/medium_clubroom_01.jpeg" alt="Medium clubroom" loading="lazy"><h2 class="subtitle has-text-centered">Medium clubroom</h2></div><div class="item"><img src="static/assets/room_photos/medium_clubroom_02.jpeg" alt="Medium clubroom" loading="lazy"><h2 class="subtitle has-text-centered">Medium clubroom</h2></div><div class="item"><img src="static/assets/room_photos/small_clubroom_01.jpeg" alt="Small clubroom" loading="lazy"><h2 class="subtitle has-text-centered">Small clubroom</h2></div><div class="item"><img src="static/assets/room_photos/small_clubroom_02.jpeg" alt="Small clubroom" loading="lazy"><h2 class="subtitle has-text-centered">Small clubroom</h2></div><div class="item"><img src="static/assets/room_photos/elevator_01.jpeg" alt="Elevator" loading="lazy"><h2 class="subtitle has-text-centered">Elevator</h2></div></div></div></div></section><section class="section hero is-light" id="dataset"><div class="container is-max-desktop">
+<h2 class="title is-3">Anechoic handclap examples</h2>
+<div class="content"><p>The source handclaps were recorded with eight microphones in the large anechoic chamber at Aalto University. Below are five retained examples from different participants, using the same source events as the dataset illustration. These listening files preserve each complete retained event on the primary microphone channel.</p>
+<p>Participant IDs are kept for provenance. We do not assign P1/A1 or other pose labels to these individual anechoic events, because their retained-event metadata do not establish those labels.</p></div>
+<div class="columns is-multiline"><div class="column is-one-third"><div class="box"><h3 class="title is-5">Participant 01</h3><audio controls preload="none" style="width:100%" src="static/assets/audio/anechoic_claps/participant01_block01_clap01.wav" aria-label="Anechoic handclap, participant 01"></audio><p class="is-size-7">Block 01, clap 01 · 0.26 s</p></div></div><div class="column is-one-third"><div class="box"><h3 class="title is-5">Participant 02</h3><audio controls preload="none" style="width:100%" src="static/assets/audio/anechoic_claps/participant02_block01_clap01.wav" aria-label="Anechoic handclap, participant 02"></audio><p class="is-size-7">Block 01, clap 01 · 0.26 s</p></div></div><div class="column is-one-third"><div class="box"><h3 class="title is-5">Participant 04</h3><audio controls preload="none" style="width:100%" src="static/assets/audio/anechoic_claps/participant04_block01_clap01.wav" aria-label="Anechoic handclap, participant 04"></audio><p class="is-size-7">Block 01, clap 01 · 0.26 s</p></div></div><div class="column is-one-third"><div class="box"><h3 class="title is-5">Participant 05</h3><audio controls preload="none" style="width:100%" src="static/assets/audio/anechoic_claps/participant05_block03_clap01.wav" aria-label="Anechoic handclap, participant 05"></audio><p class="is-size-7">Block 03, clap 01 · 0.26 s</p></div></div><div class="column is-one-third"><div class="box"><h3 class="title is-5">Participant 07</h3><audio controls preload="none" style="width:100%" src="static/assets/audio/anechoic_claps/participant07_block01_clap01.wav" aria-label="Anechoic handclap, participant 07"></audio><p class="is-size-7">Block 01, clap 01 · 0.26 s</p></div></div></div><a href="static/assets/dataset/anechoic_examples/anechoic_training_examples.pdf"><img src="static/assets/dataset/anechoic_examples/anechoic_training_examples.png" loading="lazy" alt="Five retained anechoic handclaps from different participants, with waveform and spectral examples"></a>
+<p class="mt-4">The illustration uses a 20-ms analysis crop of these events; the listening copies preserve the complete retained clips. Playback gain is independent of the plot normalization.</p>
+<p><a href="https://github.com/Akinesia112/ClapRIR">Project code and release information</a> · <a href="static/assets/dataset/benchmark_participant_split.json">Benchmark participant split</a></p>
+</div></section><section class="section" id="resources"><div class="container is-max-desktop content">
+<div class="bibtex-header"><h2 class="title">Project link</h2><button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy website link"><i class="fas fa-copy"></i><span class="copy-text">Copy</span></button></div>
+<pre id="bibtex-code"><code>https://akinesia112.github.io/ClapRIR/</code></pre>
+<p><a href="static/assets/manifest.csv">Asset manifest</a> · <a href="static/assets/README.md">Source and processing notes</a> · <a href="https://github.com/Akinesia112/ClapRIR">Website repository</a></p>
+</div></section></main>
+<footer class="footer"><div class="container"><div class="columns is-centered"><div class="column is-8"><div class="content">
+<p>This page uses the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>, adopted from <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>. The original template design is retained. Its template license is <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a>; this does not assign a blanket license to the accompanying recordings or photographs.</p>
+</div></div></div></div></footer></body></html>

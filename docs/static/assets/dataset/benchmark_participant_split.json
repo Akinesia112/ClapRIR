@@ -1,0 +1,22 @@
+{
+  "train": [
+    1,
+    2,
+    4,
+    5,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16
+  ],
+  "test": [
+    8,
+    15,
+    17
+  ],
+  "note": "test = P08/P15/P17 (representative, ~150 claps each); filter tier=clean, primary_channel=3"
+}

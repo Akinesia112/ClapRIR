@@ -1,0 +1,106 @@
+[
+  {
+    "room_id": 1,
+    "room": "Medium-size meeting room",
+    "export_path": "room_photos/medium_size_meeting_room_01.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/1-MediumSizeMeetingRoom_1.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 1,
+    "room": "Medium-size meeting room",
+    "export_path": "room_photos/medium_size_meeting_room_02.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/1-MediumSizeMeetingRoom_2.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 1,
+    "room": "Medium-size meeting room",
+    "export_path": "room_photos/medium_size_meeting_room_03.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/1-MediumSizeMeetingRoom_3.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 2,
+    "room": "Highly reverberant hallway",
+    "export_path": "room_photos/highly_reverberant_hallway_01.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/2-AcousticsHallway_1.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 2,
+    "room": "Highly reverberant hallway",
+    "export_path": "room_photos/highly_reverberant_hallway_02.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/2-AcousticsHallway_2.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 3,
+    "room": "Small PC room",
+    "export_path": "room_photos/small_pc_room_01.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/3-SmallPCRoom_1.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 3,
+    "room": "Small PC room",
+    "export_path": "room_photos/small_pc_room_02.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/3-SmallPCRoom_2.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 4,
+    "room": "Bathroom",
+    "export_path": "room_photos/bathroom_01.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/4-Bathroom.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 5,
+    "room": "Medium clubroom",
+    "export_path": "room_photos/medium_clubroom_01.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/5-ClubroomMedium_1.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 5,
+    "room": "Medium clubroom",
+    "export_path": "room_photos/medium_clubroom_02.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/5-ClubroomMedium_2.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 6,
+    "room": "Small clubroom",
+    "export_path": "room_photos/small_clubroom_01.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/6-ClubroomSmall_1.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 6,
+    "room": "Small clubroom",
+    "export_path": "room_photos/small_clubroom_02.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/6-ClubroomSmall_2.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  },
+  {
+    "room_id": 7,
+    "room": "Elevator",
+    "export_path": "room_photos/elevator_01.jpeg",
+    "source_path": "data/DifferentClaps_PhoneRecording_V1/pictures/7-Elevator.jpeg",
+    "identity_documented": true,
+    "mapping_confidence": "certain"
+  }
+]

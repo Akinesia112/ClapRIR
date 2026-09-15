@@ -1,0 +1,486 @@
+{
+  "status": "exported-awaiting-website-qa",
+  "phone_rooms": 7,
+  "phone_events": 280,
+  "phone_audio_files": 560,
+  "paper_linked_events": 16,
+  "selected_demo_events": 56,
+  "anechoic_examples": 5,
+  "room_photos": 13,
+  "missing": [
+    "Anechoic recording setup image clap_measurement.jpeg is referenced in the manuscript but absent from the local publication/data material.",
+    "Verified P1/P2/P3/A1/A2/A3/A1-/A1+ hand-position image files were not found locally; no substitute images or event-level pose mapping were created.",
+    "Public full anechoic-dataset download URL not present in the inspected sources.",
+    "Public paper/preprint URL and downloadable model checkpoint link not present in the inspected sources.",
+    "Separate reuse/license terms for dataset audio and room photographs were not present; the software MIT license is not extended to them."
+  ],
+  "spectral_display_hz": [
+    100,
+    10000
+  ],
+  "spectral_normalization_hz": [
+    100,
+    10000
+  ],
+  "spectral_y_limits_db": [
+    -45.0,
+    25.0
+  ],
+  "spectrogram_limits_db": [
+    -20,
+    30
+  ],
+  "spectrogram_data_matches_frozen_paper": true,
+  "selected_sources": [
+    {
+      "room": "Medium-size meeting room",
+      "mode": "P1",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev02_P1_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 0
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "P2",
+      "repetition": 1,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev05_P2_r1.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 1
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "P3",
+      "repetition": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev11_P3_r2.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 2
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "A1",
+      "repetition": 1,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev15_A1_r1.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 3
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "A2",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev23_A2_r4.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 4
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "A3",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev29_A3_r5.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 5
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "A1-",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev33_A1m_r4.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 6
+    },
+    {
+      "room": "Medium-size meeting room",
+      "mode": "A1+",
+      "repetition": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room01_MediumSizeMeetingRoom_m4a_ev37_A1p_r2.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 7
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "P1",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev02_P1_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 8
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "P2",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev09_P2_r5.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 9
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "P3",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev12_P3_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 10
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "A1",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev19_A1_r4.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 11
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "A2",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev23_A2_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 12
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "A3",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev30_A3_r5.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 13
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "A1-",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev33_A1m_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 14
+    },
+    {
+      "room": "Highly reverberant hallway",
+      "mode": "A1+",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room02_AcousticsHallway_m4a_ev38_A1p_r3.wav",
+      "prediction_file": "reports/phone_spectral_review/predictions.npz",
+      "prediction_row": 15
+    },
+    {
+      "room": "Small PC room",
+      "mode": "P1",
+      "repetition": 1,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room03_SmallPCRoom_m4a_ev00_P1_r1.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch080.npy",
+      "prediction_row": 0
+    },
+    {
+      "room": "Small PC room",
+      "mode": "P2",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room03_SmallPCRoom_m4a_ev07_P2_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch080.npy",
+      "prediction_row": 7
+    },
+    {
+      "room": "Small PC room",
+      "mode": "P3",
+      "repetition": 1,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room03_SmallPCRoom_m4a_ev10_P3_r1.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch088.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Small PC room",
+      "mode": "A1",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room03_SmallPCRoom_m4a_ev17_A1_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch096.npy",
+      "prediction_row": 1
+    },
+    {
+      "room": "Small PC room",
+      "mode": "A2",
+      "repetition": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room03_SmallPCRoom_m4a_ev21_A2_r2.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch096.npy",
+      "prediction_row": 5
+    },
+    {
+      "room": "Small PC room",
+      "mode": "A3",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room03_SmallPCRoom_m4a_ev29_A3_r5.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch104.npy",
+      "prediction_row": 5
+    },
+    {
+      "room": "Small PC room",
+      "mode": "A1-",
+      "repetition": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room03_SmallPCRoom_m4a_ev31_A1m_r2.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch104.npy",
+      "prediction_row": 7
+    },
+    {
+      "room": "Small PC room",
+      "mode": "A1+",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room03_SmallPCRoom_m4a_ev39_A1p_r5.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch112.npy",
+      "prediction_row": 7
+    },
+    {
+      "room": "Bathroom",
+      "mode": "P1",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room04_Bathroom_m4a_ev02_P1_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch120.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Bathroom",
+      "mode": "P2",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room04_Bathroom_m4a_ev08_P2_r4.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch128.npy",
+      "prediction_row": 0
+    },
+    {
+      "room": "Bathroom",
+      "mode": "P3",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room04_Bathroom_m4a_ev13_P3_r4.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch128.npy",
+      "prediction_row": 5
+    },
+    {
+      "room": "Bathroom",
+      "mode": "A1",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room04_Bathroom_m4a_ev17_A1_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch136.npy",
+      "prediction_row": 1
+    },
+    {
+      "room": "Bathroom",
+      "mode": "A2",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room04_Bathroom_m4a_ev22_A2_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch136.npy",
+      "prediction_row": 6
+    },
+    {
+      "room": "Bathroom",
+      "mode": "A3",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room04_Bathroom_m4a_ev27_A3_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch144.npy",
+      "prediction_row": 3
+    },
+    {
+      "room": "Bathroom",
+      "mode": "A1-",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room04_Bathroom_m4a_ev34_A1m_r5.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch152.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Bathroom",
+      "mode": "A1+",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room04_Bathroom_m4a_ev37_A1p_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch152.npy",
+      "prediction_row": 5
+    },
+    {
+      "room": "Medium clubroom",
+      "mode": "P1",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room05_ClubroomMedium_m4a_ev02_P1_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch160.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Medium clubroom",
+      "mode": "P2",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room05_ClubroomMedium_m4a_ev09_P2_r5.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch168.npy",
+      "prediction_row": 1
+    },
+    {
+      "room": "Medium clubroom",
+      "mode": "P3",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room05_ClubroomMedium_m4a_ev14_P3_r5.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch168.npy",
+      "prediction_row": 6
+    },
+    {
+      "room": "Medium clubroom",
+      "mode": "A1",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room05_ClubroomMedium_m4a_ev17_A1_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch176.npy",
+      "prediction_row": 1
+    },
+    {
+      "room": "Medium clubroom",
+      "mode": "A2",
+      "repetition": 1,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room05_ClubroomMedium_m4a_ev20_A2_r1.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch176.npy",
+      "prediction_row": 4
+    },
+    {
+      "room": "Medium clubroom",
+      "mode": "A3",
+      "repetition": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room05_ClubroomMedium_m4a_ev26_A3_r2.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch184.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Medium clubroom",
+      "mode": "A1-",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room05_ClubroomMedium_m4a_ev32_A1m_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch192.npy",
+      "prediction_row": 0
+    },
+    {
+      "room": "Medium clubroom",
+      "mode": "A1+",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room05_ClubroomMedium_m4a_ev37_A1p_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch192.npy",
+      "prediction_row": 5
+    },
+    {
+      "room": "Small clubroom",
+      "mode": "P1",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room06_ClubroomSmall_m4a_ev03_P1_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch200.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Small clubroom",
+      "mode": "P2",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room06_ClubroomSmall_m4a_ev09_P2_r4.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch208.npy",
+      "prediction_row": 0
+    },
+    {
+      "room": "Small clubroom",
+      "mode": "P3",
+      "repetition": 1,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room06_ClubroomSmall_m4a_ev11_P3_r1.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch208.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Small clubroom",
+      "mode": "A1",
+      "repetition": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room06_ClubroomSmall_m4a_ev17_A1_r2.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch216.npy",
+      "prediction_row": 0
+    },
+    {
+      "room": "Small clubroom",
+      "mode": "A2",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room06_ClubroomSmall_m4a_ev25_A2_r5.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch224.npy",
+      "prediction_row": 0
+    },
+    {
+      "room": "Small clubroom",
+      "mode": "A3",
+      "repetition": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room06_ClubroomSmall_m4a_ev27_A3_r2.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch224.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Small clubroom",
+      "mode": "A1-",
+      "repetition": 1,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room06_ClubroomSmall_m4a_ev31_A1m_r1.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch224.npy",
+      "prediction_row": 6
+    },
+    {
+      "room": "Small clubroom",
+      "mode": "A1+",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room06_ClubroomSmall_m4a_ev38_A1p_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch232.npy",
+      "prediction_row": 5
+    },
+    {
+      "room": "Elevator",
+      "mode": "P1",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room07_Elevator_m4a_ev05_P1_r5.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch240.npy",
+      "prediction_row": 4
+    },
+    {
+      "room": "Elevator",
+      "mode": "P2",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room07_Elevator_m4a_ev09_P2_r4.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch248.npy",
+      "prediction_row": 0
+    },
+    {
+      "room": "Elevator",
+      "mode": "P3",
+      "repetition": 5,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room07_Elevator_m4a_ev15_P3_r5.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch248.npy",
+      "prediction_row": 6
+    },
+    {
+      "room": "Elevator",
+      "mode": "A1",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room07_Elevator_m4a_ev19_A1_r4.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch256.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Elevator",
+      "mode": "A2",
+      "repetition": 3,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room07_Elevator_m4a_ev23_A2_r3.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch256.npy",
+      "prediction_row": 6
+    },
+    {
+      "room": "Elevator",
+      "mode": "A3",
+      "repetition": 2,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room07_Elevator_m4a_ev27_A3_r2.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch264.npy",
+      "prediction_row": 2
+    },
+    {
+      "room": "Elevator",
+      "mode": "A1-",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room07_Elevator_m4a_ev34_A1m_r4.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch272.npy",
+      "prediction_row": 1
+    },
+    {
+      "room": "Elevator",
+      "mode": "A1+",
+      "repetition": 4,
+      "input_file": "reports/phone_clap_demo/results/segments/m4a/room07_Elevator_m4a_ev39_A1p_r4.wav",
+      "prediction_file": "runs/e6_phone_raw_cache/raw_v1_seed42001_batch272.npy",
+      "prediction_row": 6
+    }
+  ],
+  "new_inferences": 0,
+  "subjective_listening_review": "Prepared for manual listening; automated WAV and provenance checks do not establish perceptual quality."
+}

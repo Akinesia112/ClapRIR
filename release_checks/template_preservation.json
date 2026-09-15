@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "css_and_existing_js_unchanged": true,
+  "files": {
+    "static/css/bulma-carousel.min.css": "9d586b0d953f9dedc8ff3e8b5d611bc943849afefdb0f18a11bb0fed258b9072",
+    "static/css/bulma-slider.min.css": "9bd5f05ad71360d0e87f21dd3d07d94c080486342f335ff041f5394c6aa6dac9",
+    "static/css/bulma.css.map.txt": "2dd7317e7daa3390397b28665ad4398be313b93114747cb9e0052030b771143f",
+    "static/css/bulma.min.css": "58b28659220961ead137cb5b346b5759562750ce703094d70fc786e0db467033",
+    "static/css/fontawesome.all.min.css": "f6237427fc6c2d6b154f306e20edf93636c7e38cc59022d9a69a176d49c2315e",
+    "static/css/index.css": "2840bed03588f74948e6ee849587af5cbda9246c9db415756b41b69cd26191cf",
+    "static/js/bulma-carousel.js": "ee6667c8ae6dabe1bb14d8792b32687fb9d130c31f3dcf582b03c611c2f0edf1",
+    "static/js/bulma-carousel.min.js": "a8a47bef2cd50640d82aea128360690086ccb6617c6858ee4c71559c88e4a732",
+    "static/js/bulma-slider.js": "a77efa04a36ff2815e057a0bf0ee911216f3c03904b94726018d636057f1e723",
+    "static/js/bulma-slider.min.js": "e520e9ef6e3223ecfbb50b4649d238af5a85af9161800ad1d003dac80d748f24",
+    "static/js/fontawesome.all.min.js": "20a3ef6979bbe5e4de1afaecc703e1d34cbc5e3ceab36d378539506327692d72",
+    "static/js/index.js": "cda22b63ac751c525390e19f702dba8c87ca8005a57c829d9872e349ba6f8a6c"
+  },
+  "original_index_sha256": "cd4f2326acf12a7e359df1e8f5c47f74992a71e48f84fd6f9044f04a3806aee0",
+  "updated_index_sha256": "cb23aa2ac86c33c7a29acc16df03000f8761406520a27c627e1925cd64028247"
+}
