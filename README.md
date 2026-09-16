@@ -9,7 +9,8 @@
 - [Complete website and asset bundle (ZIP)](https://github.com/Akinesia112/ClapRIR/archive/refs/heads/main.zip)
 - [Asset inventory and provenance](docs/static/assets/README.md)
 - [Per-asset manifest](docs/static/assets/manifest.csv)
-- [Updated paper figure: spectra and temporal magnitude](docs/static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf)
+- [Paper figure: spectra and RMS envelopes](docs/static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf)
+- [Raw linear waveform alternative](docs/static/assets/figures/waveforms/paper_spectra_and_waveforms_linear_15khz.pdf)
 
 The demo contains seven phone-recording rooms, eight handclap modes and five repetitions per mode (280 paired recordings and inferred RIRs), spectra, spectrograms, 13 documented room photographs and five anechoic examples. The original website template design is preserved.
 

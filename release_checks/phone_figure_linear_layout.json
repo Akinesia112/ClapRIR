@@ -31,8 +31,8 @@
   ],
   "data_unchanged": true,
   "new_inferences": 0,
-  "pdf_sha256": "50cbc3291afc716b2e2570111b64a95ebd7079c0e938ee85e2a5ec66016332bc",
-  "png_sha256": "0afc53bff88df7d344fba019d4475ca844e10e44e2f580d161f2d73060699c1c",
+  "pdf_sha256": "c047045c61cb8d8282d3340941c3fcd4dc56fc18ae32a157923216e508f6832e",
+  "png_sha256": "70b0aa70a399658eb5c234775b830c28b4dceb928c04392fb5d6d17ca3c752fd",
   "layout": "Room 1 spectra, Room 1 time, Room 2 spectra, Room 2 time; recorded-clap / inferred-RIR columns throughout",
   "layout_reference": "publication/figures/phone_room_spectra.pdf",
   "panel_labels": [
@@ -129,17 +129,17 @@
     0
   ],
   "spectrum_normalization": "Each 1/12-octave mean-power spectrum divided by its maximum bin power in the displayed 0.1--15-kHz interval, then 10 log10; peak is 0 dB",
-  "waveform_scale": "db",
-  "waveform_y_axis": "RMS level (dB)",
+  "waveform_scale": "linear",
+  "waveform_y_axis": "Digital amplitude",
   "waveform_y_limits": [
-    -40,
-    0
+    -1,
+    1
   ],
-  "waveform_normalization": "Independent RMS-envelope peak over displayed 0--250 ms; visualization only",
-  "rms_window_samples": 221,
-  "rms_hop_samples": 44,
-  "rms_boundary": "Centered window clipped to available source support, divided by actual sample count; no zero padding. The 250-ms point uses the full saved waveform.",
-  "waveform_db_definition": "20 log10(RMS / max(RMS)) with numerical floor 1e-12, displayed from -40 to 0 dB",
+  "waveform_normalization": "None: raw signed digital samples, no amplitude scaling",
+  "rms_window_samples": null,
+  "rms_hop_samples": null,
+  "rms_boundary": null,
+  "waveform_db_definition": null,
   "waveform_alignment": "unchanged input-onset alignment; no prediction-dependent shift",
   "spectral_curves_below_display_floor": [
     43,
