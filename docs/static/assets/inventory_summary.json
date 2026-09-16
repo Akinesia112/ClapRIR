@@ -1,5 +1,5 @@
 {
-  "status": "exported-awaiting-website-qa",
+  "status": "exported-validated-and-website-qa-passed",
   "phone_rooms": 7,
   "phone_events": 280,
   "phone_audio_files": 560,
@@ -9,10 +9,12 @@
   "room_photos": 13,
   "missing": [
     "Anechoic recording setup image clap_measurement.jpeg is referenced in the manuscript but absent from the local publication/data material.",
-    "Verified P1/P2/P3/A1/A2/A3/A1-/A1+ hand-position image files were not found locally; no substitute images or event-level pose mapping were created.",
     "Public full anechoic-dataset download URL not present in the inspected sources.",
     "Public paper/preprint URL and downloadable model checkpoint link not present in the inspected sources.",
-    "Separate reuse/license terms for dataset audio and room photographs were not present; the software MIT license is not extended to them."
+    "Separate reuse/license terms for dataset audio and room photographs were not present; the software MIT license is not extended to them.",
+    "Separate event-level pose labels for the five legacy anechoic listening examples remain unverified; the supplied labelled composite is independent.",
+    "Separate event-level pose labels for the five legacy anechoic listening examples remain unverified; the supplied labelled composite is independent.",
+    "Separate event-level pose labels for the five legacy anechoic listening examples remain unverified; the supplied labelled composite is independent."
   ],
   "spectral_display_hz": [
     100,
@@ -482,5 +484,26 @@
     }
   ],
   "new_inferences": 0,
-  "subjective_listening_review": "Prepared for manual listening; automated WAV and provenance checks do not establish perceptual quality."
+  "subjective_listening_review": "Prepared for manual listening; automated WAV and provenance checks do not establish perceptual quality.",
+  "combined_paper_figures": {
+    "display_hz": [
+      100,
+      15000
+    ],
+    "display_db": [
+      -40.0,
+      20.0
+    ],
+    "normalization_hz": [
+      100,
+      10000
+    ],
+    "spectrum_normalization": "Original spectral convention: squared 39690-point FFT magnitude divided by each signal mean FFT-bin power over 0.1--10 kHz; 1/12-octave mean linear power, then 10 log10. No spectral-peak normalization.",
+    "waveform_y_limits": [
+      -60.0,
+      -0.0
+    ],
+    "waveform_normalization": "None: RMS of original digital samples, fixed amplitude reference 1"
+  },
+  "supplied_pose_composite": "dataset/clap_pose_reference/clap_spectra_with_hands.pdf"
 }

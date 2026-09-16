@@ -12,6 +12,8 @@
 - [Paper figure: spectra and RMS envelopes](docs/static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf)
 - [Raw linear waveform alternative](docs/static/assets/figures/waveforms/paper_spectra_and_waveforms_linear_15khz.pdf)
 
+The two current combined figures preserve original digital levels without per-signal normalization in temporal panels (RMS dBFS or raw signed waveforms), while spectra retain the original mean FFT-bin power normalization. Prior peak-normalized figures remain available in the asset bundle for comparison.
+
 The demo contains seven phone-recording rooms, eight handclap modes and five repetitions per mode (280 paired recordings and inferred RIRs), spectra, spectrograms, 13 documented room photographs and five anechoic examples. The original website template design is preserved.
 
 Paper-linked examples reuse the frozen input-selected samples and exact saved estimates. Listening WAVs are mono, 44.1 kHz, and independently peak-scaled to -1 dBFS for playback only. No inference was rerun. The phone recordings have no paired reference RIR; these examples do not measure reconstruction accuracy.

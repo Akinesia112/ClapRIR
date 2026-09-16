@@ -1,0 +1,22 @@
+/* Scoped to the four requested media updates; original template CSS is unchanged. */
+#phone-demo .phone-room > figure.image img,
+#room-gallery .item > img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 28vw, 320px);
+  object-fit: contain;
+  object-position: center;
+}
+@media screen and (min-width: 769px) {
+  #phone-demo > .container > .columns > .column > .phone-room > .title {
+    min-height: 2.25em;
+  }
+}
+#spectrograms .phone-figure-details {
+  margin-bottom: 1rem;
+}
+#spectrograms .phone-figure-details > summary {
+  cursor: pointer;
+  padding: 0.65rem 0;
+  font-weight: 600;
+}

@@ -23,16 +23,16 @@
   ],
   "normalization_hz": [
     100,
-    15000
+    10000
   ],
   "display_db": [
-    -40,
-    0
+    -40.0,
+    20.0
   ],
   "data_unchanged": true,
   "new_inferences": 0,
-  "pdf_sha256": "50cbc3291afc716b2e2570111b64a95ebd7079c0e938ee85e2a5ec66016332bc",
-  "png_sha256": "0afc53bff88df7d344fba019d4475ca844e10e44e2f580d161f2d73060699c1c",
+  "pdf_sha256": "920863bc3273860947739146723eb265faba9d73be2b8447b08549822e7dfae2",
+  "png_sha256": "ca34fe61ab60456b0cfe36560c68d1569e6b660c4368d153c6e1b55a18d3fd82",
   "layout": "Room 1 spectra, Room 1 time, Room 2 spectra, Room 2 time; recorded-clap / inferred-RIR columns throughout",
   "layout_reference": "publication/figures/phone_room_spectra.pdf",
   "panel_labels": [
@@ -122,32 +122,39 @@
     15
   ],
   "spectral_ticks_db": [
-    -40,
-    -30,
-    -20,
-    -10,
-    0
+    -40.0,
+    -30.0,
+    -20.0,
+    -10.0,
+    0.0,
+    10.0,
+    20.0
   ],
-  "spectrum_normalization": "Each 1/12-octave mean-power spectrum divided by its maximum bin power in the displayed 0.1--15-kHz interval, then 10 log10; peak is 0 dB",
+  "spectrum_normalization": "Original spectral convention: squared 39690-point FFT magnitude divided by each signal mean FFT-bin power over 0.1--10 kHz; 1/12-octave mean linear power, then 10 log10. No spectral-peak normalization.",
   "waveform_scale": "db",
-  "waveform_y_axis": "RMS level (dB)",
+  "waveform_y_axis": "RMS level (dBFS)",
   "waveform_y_limits": [
-    -40,
-    0
+    -60.0,
+    -0.0
   ],
-  "waveform_normalization": "Independent RMS-envelope peak over displayed 0--250 ms; visualization only",
+  "waveform_normalization": "None: RMS of original digital samples, fixed amplitude reference 1",
   "rms_window_samples": 221,
   "rms_hop_samples": 44,
   "rms_boundary": "Centered window clipped to available source support, divided by actual sample count; no zero padding. The 250-ms point uses the full saved waveform.",
-  "waveform_db_definition": "20 log10(RMS / max(RMS)) with numerical floor 1e-12, displayed from -40 to 0 dB",
+  "waveform_db_definition": "20 log10(RMS), fixed digital amplitude reference 1 and numerical amplitude floor 1e-12; no envelope-peak division",
   "waveform_alignment": "unchanged input-onset alignment; no prediction-dependent shift",
   "spectral_curves_below_display_floor": [
-    43,
+    0,
     0
   ],
+  "rms_curves_below_display_floor": [
+    0,
+    0
+  ],
+  "display_calibration": "Temporal panels preserve original digital levels, not calibrated SPL; RMS dBFS uses digital full scale 1 for every curve. Spectra retain the original per-signal mean-power normalization.",
   "legend_columns": 8,
   "shared_legend_count": 1,
   "super_title": false,
-  "pdf_raster_review": "Full PDF independently rasterized with Ghostscript at 145 dpi and inspected; room spectra/time grouping, eight subpanel labels, shared legend and text are readable without overlap.",
+  "pdf_raster_review": "Full PDFs independently rasterized with Ghostscript at 145 dpi and inspected. All eight panels, shared axes, letters, and legend are readable without overlap.",
   "source_selection_and_predictions_unchanged": true
 }

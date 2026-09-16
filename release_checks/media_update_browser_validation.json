@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "reference_commit": "8eff9e72eb56e5ac6ce3418de9959e2973286aaa",
+  "scope": "Four requested website media changes; original spectral processing and unnormalized temporal panels",
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "photo_frame_height": 320,
+      "photo_count": 31,
+      "main_room_photos_aligned": true,
+      "collapsible_panels": 3,
+      "all_images_loaded": true,
+      "overflow": false,
+      "errors": [],
+      "missing": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "photo_frame_height": 220,
+      "photo_count": 31,
+      "main_room_photos_aligned": false,
+      "collapsible_panels": 3,
+      "all_images_loaded": true,
+      "overflow": false,
+      "errors": [],
+      "missing": []
+    }
+  ],
+  "existing_css_and_js_files_identical_to_reference": 13,
+  "visual_review": "Desktop listening and gallery photos, expanded figures and mobile collapsed section inspected; aligned photo frames, no cropping, all labels/legends readable. Full figure PDFs also inspected independently."
+}
