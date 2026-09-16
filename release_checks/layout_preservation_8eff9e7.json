@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "reference_commit": "8eff9e72eb56e5ac6ce3418de9959e2973286aaa",
+  "dom_tree_and_all_non_link_attributes_identical": true,
+  "element_count": 617,
+  "anchor_count": 69,
+  "changed_existing_links_only": [
+    {
+      "before_text": "Paper spectra + eight-mode waveforms",
+      "after_text": "RMS envelopes (dB)",
+      "before_href": "static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf",
+      "after_href": "static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf"
+    },
+    {
+      "before_text": "20-kHz diagnostic",
+      "after_text": "Raw linear waveforms",
+      "before_href": "static/assets/figures/spectra/phone_rooms_spectra_20khz_diagnostic.pdf",
+      "after_href": "static/assets/figures/waveforms/paper_spectra_and_waveforms_linear_15khz.pdf"
+    }
+  ],
+  "css_and_js_byte_identical": {
+    "docs/static/css/bulma-carousel.min.css": "9d586b0d953f9dedc8ff3e8b5d611bc943849afefdb0f18a11bb0fed258b9072",
+    "docs/static/css/bulma-slider.min.css": "9bd5f05ad71360d0e87f21dd3d07d94c080486342f335ff041f5394c6aa6dac9",
+    "docs/static/css/bulma.css.map.txt": "2dd7317e7daa3390397b28665ad4398be313b93114747cb9e0052030b771143f",
+    "docs/static/css/bulma.min.css": "58b28659220961ead137cb5b346b5759562750ce703094d70fc786e0db467033",
+    "docs/static/css/fontawesome.all.min.css": "f6237427fc6c2d6b154f306e20edf93636c7e38cc59022d9a69a176d49c2315e",
+    "docs/static/css/index.css": "2840bed03588f74948e6ee849587af5cbda9246c9db415756b41b69cd26191cf",
+    "docs/static/js/bulma-carousel.js": "ee6667c8ae6dabe1bb14d8792b32687fb9d130c31f3dcf582b03c611c2f0edf1",
+    "docs/static/js/bulma-carousel.min.js": "a8a47bef2cd50640d82aea128360690086ccb6617c6858ee4c71559c88e4a732",
+    "docs/static/js/bulma-slider.js": "a77efa04a36ff2815e057a0bf0ee911216f3c03904b94726018d636057f1e723",
+    "docs/static/js/bulma-slider.min.js": "e520e9ef6e3223ecfbb50b4649d238af5a85af9161800ad1d003dac80d748f24",
+    "docs/static/js/fontawesome.all.min.js": "20a3ef6979bbe5e4de1afaecc703e1d34cbc5e3ceab36d378539506327692d72",
+    "docs/static/js/index.js": "cda22b63ac751c525390e19f702dba8c87ca8005a57c829d9872e349ba6f8a6c",
+    "docs/static/js/phone-demo.js": "b12704e7f2720fe84483c22ec82c48bded38852794a8abd186fd9c85e24d7c36"
+  },
+  "new_sections": 0,
+  "new_cards": 0,
+  "new_columns": 0,
+  "inline_images_unchanged": true,
+  "latest_rms_and_raw_linear_pdfs_preserved": true,
+  "reference_html_sha256": "cb23aa2ac86c33c7a29acc16df03000f8761406520a27c627e1925cd64028247",
+  "updated_html_sha256": "072527a9326d8e8775822e057731bf6b6c9277ae207afe221e82c3f631283141"
+}

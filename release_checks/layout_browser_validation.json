@@ -1,0 +1,205 @@
+{
+  "status": "passed",
+  "reference_commit": "8eff9e72eb56e5ac6ce3418de9959e2973286aaa",
+  "desktop_and_mobile_geometry_match": true,
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "layout": {
+        "overflow": false,
+        "sections": [
+          {
+            "className": "hero",
+            "id": "",
+            "x": 0,
+            "width": 1440
+          },
+          {
+            "className": "hero teaser",
+            "id": "",
+            "x": 0,
+            "width": 1440
+          },
+          {
+            "className": "section hero is-light",
+            "id": "",
+            "x": 0,
+            "width": 1440
+          },
+          {
+            "className": "section",
+            "id": "phone-demo",
+            "x": 0,
+            "width": 1440
+          },
+          {
+            "className": "hero is-small is-light",
+            "id": "spectrograms",
+            "x": 0,
+            "width": 1440
+          },
+          {
+            "className": "hero is-small",
+            "id": "rooms",
+            "x": 0,
+            "width": 1440
+          },
+          {
+            "className": "section hero is-light",
+            "id": "dataset",
+            "x": 0,
+            "width": 1440
+          },
+          {
+            "className": "section",
+            "id": "resources",
+            "x": 0,
+            "width": 1440
+          }
+        ],
+        "columns": [
+          {
+            "id": "room-1",
+            "x": 240,
+            "width": 468
+          },
+          {
+            "id": "room-2",
+            "x": 732,
+            "width": 468
+          },
+          {
+            "id": "room-3",
+            "x": 240,
+            "width": 960
+          },
+          {
+            "id": "room-4",
+            "x": 240,
+            "width": 960
+          },
+          {
+            "id": "room-5",
+            "x": 240,
+            "width": 960
+          },
+          {
+            "id": "room-6",
+            "x": 240,
+            "width": 960
+          },
+          {
+            "id": "room-7",
+            "x": 240,
+            "width": 960
+          }
+        ],
+        "cards": 7,
+        "links": 69
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "passed",
+      "layout": {
+        "overflow": false,
+        "sections": [
+          {
+            "className": "hero",
+            "id": "",
+            "x": 0,
+            "width": 390
+          },
+          {
+            "className": "hero teaser",
+            "id": "",
+            "x": 0,
+            "width": 390
+          },
+          {
+            "className": "section hero is-light",
+            "id": "",
+            "x": 0,
+            "width": 390
+          },
+          {
+            "className": "section",
+            "id": "phone-demo",
+            "x": 0,
+            "width": 390
+          },
+          {
+            "className": "hero is-small is-light",
+            "id": "spectrograms",
+            "x": 0,
+            "width": 390
+          },
+          {
+            "className": "hero is-small",
+            "id": "rooms",
+            "x": 0,
+            "width": 390
+          },
+          {
+            "className": "section hero is-light",
+            "id": "dataset",
+            "x": 0,
+            "width": 390
+          },
+          {
+            "className": "section",
+            "id": "resources",
+            "x": 0,
+            "width": 390
+          }
+        ],
+        "columns": [
+          {
+            "id": "room-1",
+            "x": 24,
+            "width": 342
+          },
+          {
+            "id": "room-2",
+            "x": 24,
+            "width": 342
+          },
+          {
+            "id": "room-3",
+            "x": 24,
+            "width": 342
+          },
+          {
+            "id": "room-4",
+            "x": 24,
+            "width": 342
+          },
+          {
+            "id": "room-5",
+            "x": 24,
+            "width": 342
+          },
+          {
+            "id": "room-6",
+            "x": 24,
+            "width": 342
+          },
+          {
+            "id": "room-7",
+            "x": 24,
+            "width": 342
+          }
+        ],
+        "cards": 7,
+        "links": 69
+      }
+    }
+  ]
+}
