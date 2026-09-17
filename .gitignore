@@ -8,12 +8,3 @@ data/
 runs/
 reports/
 runtime/
-
-# LaTeX build products
-paper/*.aux
-paper/*.log
-paper/*.out
-paper/*.bbl
-paper/*.blg
-paper/*.synctex.gz
-paper/main.pdf

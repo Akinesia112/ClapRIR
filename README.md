@@ -8,8 +8,8 @@ Shih-Yu Lai<sup>1,2,3</sup> &nbsp; Kyung Yun Lee<sup>2</sup> &nbsp; Nils Meyer-K
 
 A handclap is an equipment-free excitation for room acoustics, but its source
 waveform is unknown and varies between claps, which makes room impulse response
-(RIR) estimation hard. This repository holds the code, the manuscript sources and
-the project website for that work.
+(RIR) estimation hard. This repository holds the code and the project website for that
+work.
 
 ## Examples and listening demo
 
@@ -40,7 +40,6 @@ src/claprir/        the library
 experiments/        one script per experiment; each writes a report directory
 figures/            scripts that render the manuscript figures
 tables/             scripts that render the manuscript tables
-paper/              main.tex, bibliography, figures, tables, IEEE style files
 docs/               the project website (GitHub Pages)
 ```
 
@@ -99,6 +98,8 @@ directory. That behaviour is inherited from the research code and was left as is
   they read precomputed results.
 - **Exploratory arms** of the research tree that no manuscript figure or table
   depends on.
+- **The manuscript sources.** The figure and table scripts here regenerate the
+  assets the paper uses; the LaTeX itself is kept outside this repository.
 
 ## Relationship to the research repository
 
