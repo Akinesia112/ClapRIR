@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\caption{Repeated-clap estimation pooled over Shoebox, MIT, and ACE. M1 and M1$'$ average per-clap estimates; M2 jointly conditions on all $K$ observations.}
+\label{tab:multiclap}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+method & $K{=}1$ & $K{=}2$ & $K{=}3$ & $K{=}5$ \\
+\midrule
+\multicolumn{5}{l}{\emph{NRMSE}} \\
+M1: independent + average
+    & 0.651 & 0.569 & 0.541 & 0.525 \\
+M1$'$: joint model + average
+    & 0.618 & 0.547 & 0.506 & 0.496 \\
+M2: joint conditioning
+    & 0.618 & 0.600 & 0.559 & 0.571 \\
+\midrule
+\multicolumn{5}{l}{\emph{EDC RMSE (dB)}} \\
+M1 & 1.61 & 2.64 & 3.60 & 4.53 \\
+M1$'$ & 1.64 & 2.05 & 3.02 & 3.74 \\
+M2 & 1.64 & 1.61 & 1.55 & 1.59 \\
+\midrule
+\multicolumn{5}{l}{\emph{Late-energy ratio (target $=1$)}} \\
+M1 & 0.862 & 0.542 & 0.461 & 0.390 \\
+M1$'$ & 0.983 & 0.626 & 0.506 & 0.416 \\
+M2 & 0.983 & 0.881 & 0.819 & 0.847 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

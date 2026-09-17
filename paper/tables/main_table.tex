@@ -1,0 +1,74 @@
+% Generated from original E3 per_example.csv + shoebox_pipeline_recheck/support_corrected.csv; aggregation unchanged.
+\begin{table*}[t]
+\centering\scriptsize
+% \caption{Matched 1 s estimators. Provider medians aggregate draws within seed/room, then seeds within room and rooms within provider. $\dagger$ marks Shoebox: all six metrics use its retained 4096-sample (92.88 ms) support. Source reconstruction proved that longer simulated responses had been cropped before padding to 1 s; scoring was corrected on unchanged model predictions. This is not a full-second synthetic decay benchmark. Measured-provider rows are unchanged. BUT (two rooms) and ACE (one room) are descriptive. NRMSE is a companion.}
+\caption{Matched 1-s regression and flow estimators. Provider medians aggregate repeated Flow draws within each seed--room pair,
+then training seeds within room and rooms within provider. Shoebox
+metrics use its 4096-sample (92.88-ms) valid support. BUT and ACE contain two
+and one independent rooms, respectively, so those provider summaries are
+descriptive. NRMSE is a companion metric.}
+\label{tab:main}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Provider & Estimator & EDC RMSE (dB) & $|\Delta C_{50}|$ (dB) & $|\Delta\mathrm{EDT}|$ (s) & EDP RMSE & Log-mag MSE & NRMSE & \# of Para. (M) & Inference \\
+\midrule
+Shoebox & Regression & 0.803 & 0.631 & 0.016 & 0.236 & 0.047 & 0.637 & 26.53 & 1 forward \\
+Shoebox & Flow & 3.073 & 2.658 & 0.032 & 0.289 & 0.215 & 0.777 & 29.31 & 20 NFE \\
+\addlinespace
+MIT & Regression & 4.059 & 0.837 & 0.006 & 0.130 & 0.047 & 0.548 & 26.53 & 1 forward \\
+MIT & Flow & 6.552 & 2.496 & 0.005 & 0.146 & 0.274 & 0.591 & 29.31 & 20 NFE \\
+\addlinespace
+BUT & Regression & 5.202 & 0.892 & 0.118 & 0.152 & 0.042 & 1.186 & 26.53 & 1 forward \\
+BUT & Flow & 8.903 & 1.085 & 0.181 & 0.168 & 0.085 & 1.233 & 29.31 & 20 NFE \\
+\addlinespace
+ACE & Regression & 1.679 & 0.387 & 0.020 & 0.355 & 0.066 & 0.709 & 26.53 & 1 forward \\
+ACE & Flow & 3.900 & 1.604 & 0.044 & 0.314 & 0.345 & 0.892 & 29.31 & 20 NFE \\
+\addlinespace
+OpenAIR & Regression & 2.097 & 1.262 & 0.071 & 0.104 & 0.078 & 1.199 & 26.53 & 1 forward \\
+OpenAIR & Flow & 3.941 & 1.221 & 0.080 & 0.113 & 0.294 & 1.168 & 29.31 & 20 NFE \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+% \begin{table}[t]
+% \centering
+% \caption{Median NRMSE by RIR source. Lower is better; $1.0$ is the error of predicting silence. Rows M1 and M2 are at $K=5$.}
+% \label{tab:main}
+% \begin{tabular}{llccccc}
+% \toprule
+%  & method & Shoebox & MIT & ACE & BUT & OpenAIR \\
+% \midrule
+% D1 & true clap $\to$ Tikhonov (oracle) & 0.046 & 0.025 & 0.026 & 0.078 & 0.046 \\
+% D2 & \SI{3}{\milli\second} crop $\to$ Tikhonov & 4.827 & 2.684 & 2.586 & 2.022 & 2.533 \\
+% S1 & hybrid regression, $K=1$ & 0.551 & 0.602 & 0.696 & 1.195 & 1.288 \\
+% S2 & hybrid flow, $K=1$ (ablation) & 0.658 & 0.665 & 0.764 & 1.193 & 1.302 \\
+% \midrule
+% M1 & independent + average & 0.449 & 0.464 & 0.570 & 1.017 & 1.263 \\
+% M2 & joint conditioning & 0.553 & 0.490 & 0.673 & 1.134 & 1.308 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+\begin{table}[t]
+\centering
+\caption{Median RIR NRMSE by evaluation source. Lower is better; NRMSE $=1$ corresponds to predicting silence. M1 and M2 use $K=5$.}
+\label{tab:main}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llccccc}
+\toprule
+ & Method & Shoebox & MIT & ACE & BUT & OpenAIR \\
+\midrule
+D1 & oracle Tikhonov       & 0.046 & 0.025 & 0.026 & 0.078 & 0.046 \\
+D2 & \SI{3}{\milli\second} crop + Tikhonov
+                             & 4.827 & 2.684 & 2.586 & 2.022 & 2.533 \\
+S1 & hybrid regression     & 0.551 & 0.602 & 0.696 & 1.195 & 1.288 \\
+S2 & hybrid flow           & 0.658 & 0.665 & 0.764 & 1.193 & 1.302 \\
+\midrule
+M1 & independent + average & 0.449 & 0.464 & 0.570 & 1.017 & 1.263 \\
+M2 & joint conditioning    & 0.553 & 0.490 & 0.673 & 1.134 & 1.308 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

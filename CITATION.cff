@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: Estimation of Room Impulse Responses from Handclaps
+message: If you use this software or dataset, please cite the paper.
+type: software
+authors:
+  - given-names: Shih-Yu
+    family-names: Lai
+  - given-names: Kyung Yun
+    family-names: Lee
+  - given-names: Nils
+    family-names: Meyer-Kahlen
+  - given-names: Eloi
+    family-names: Moliner
+  - given-names: Bing-Yu
+    family-names: Chen
+  - given-names: Vesa
+    family-names: Välimäki

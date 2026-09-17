@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claprir"
+version = "0.1.0"
+description = "Room impulse response estimation from handclaps"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Shih-Yu Lai" },
+    { name = "Kyung Yun Lee" },
+    { name = "Nils Meyer-Kahlen" },
+    { name = "Eloi Moliner" },
+    { name = "Bing-Yu Chen" },
+    { name = "Vesa Välimäki" },
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "torch>=2.0",
+    "soundfile>=0.12",
+    "matplotlib>=3.7",
+    "einops>=0.6",
+]
+
+[project.optional-dependencies]
+simulation = ["pyroomacoustics>=0.7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
