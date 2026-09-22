@@ -93,8 +93,8 @@
 </div></div>
 </div></div></div></div></section>
 <section class="hero teaser"><div class="container is-max-desktop"><div class="hero-body">
-<a href="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf"><img src="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.png" alt="Spectra and raw linear waveforms of recorded phone claps and inferred RIRs in two rooms"></a>
-<h2 class="subtitle has-text-centered">Eight handclap modes, two rooms. Spectra and raw waveforms of recorded handclaps (left) and their inferred RIRs (right). Waveforms retain the original digital amplitudes.</h2>
+<a href="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf"><img src="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.png" alt="Spectra and RMS envelopes of recorded handclaps and inferred RIRs in two rooms"></a>
+<h2 class="subtitle has-text-centered">Eight handclap modes, two rooms. Spectra and RMS envelopes of recorded handclaps (left) and their inferred RIRs (right), shown over 500&nbsp;ms so the longer decay of the hallway is visible. Levels are in dB and retain the original digital levels.</h2>
 </div></div></section>
 <section class="section hero is-light"><div class="container is-max-desktop"><div class="columns is-centered has-text-centered"><div class="column is-four-fifths">
 <h2 class="title is-3">From a handclap to a room response</h2>
@@ -102,7 +102,7 @@
 <p>This page provides additional real phone-recording examples for listening and visual inspection. The phone recordings have no paired reference RIR, so these examples illustrate model behavior and do not establish reconstruction accuracy.</p></div>
 </div></div></div></section>
 <section class="section" id="phone-demo"><div class="container is-max-desktop">
-<h2 class="title is-3">Listen: phone claps and inferred RIRs</h2>
+<h2 class="title is-3">Listen: phone-recorded handclaps and inferred RIRs</h2>
 <div class="content"><p>iPhone 15 recordings from seven rooms, originally at 48 kHz and resampled to 44.1 kHz. Every room contains eight protocol modes with five repetitions each. The default example for each room and mode is the existing unclipped recording with the highest pre-handclap SNR, selected using only the input.</p>
 <p>Both players use the original one-second model interval. Each WAV is independently peak-normalized to −1 dBFS <strong>for listening only</strong>; no denoising or filtering is applied. Listen for the onset and decay of each inferred response, and compare the two rooms. There is no paired reference RIR.</p>
 <p><a href="static/audio_examples.zip">Download the six paper-selected P1/P2/P3 pairs (ZIP)</a> · <a href="static/assets/phone_demo/all_rooms/recording_inventory.csv">Recording inventory</a></p></div>
@@ -219,7 +219,7 @@
 <p><a href="static/assets/figures/spectrograms/highly_reverberant_hallway_8modes.pdf">Eight-mode PDF</a></p></details></div></div>
 <details class="phone-figure-details"><summary>Spectra and temporal RMS envelopes</summary>
 <a href="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf"><img loading="lazy" src="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.png" alt="Eight-mode spectra and RMS temporal envelopes of recorded claps and inferred RIRs, grouped by room"></a>
-<p>The temporal panels show 0–250 ms RMS envelopes, with a 5 ms window and approximately 1 ms spacing. They use the original digital amplitudes without peak normalization, with shared −60 to 0 dBFS limits and digital full scale equal to one for every curve.</p>
+<p>The temporal panels show 0–500 ms RMS envelopes, with a 5 ms window and approximately 1 ms spacing. They use the original digital levels without peak normalization, with shared −70 to 0 dB limits and digital full scale equal to one for every curve. The 500 ms window replaces an earlier 250 ms crop, which ended while the reverberant hallway was still only about 19 dB into its decay.</p>
 <p class="mt-4">These combined figures use 0.1–15 kHz spectra from the first 0.9 s, with 1/12-octave power averaging and the original per-signal mean FFT-bin power normalization over 0.1–10 kHz. All spectral panels share −40 to +20 dB limits. Only the temporal panels use unnormalized digital amplitudes; these are not calibrated sound-pressure levels.</p>
 </details>
 <p><a href="static/assets/figures/spectra/paper_phone_spectra_15khz.pdf">Paper spectra, 15 kHz</a> · <a href="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf">RMS envelopes (dB)</a> · <a href="static/assets/figures/waveforms/paper_spectra_and_waveforms_15khz.pdf">Raw linear waveforms</a></p>
