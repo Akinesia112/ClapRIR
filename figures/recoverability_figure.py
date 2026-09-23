@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[1]
 def main():
     source=ROOT/'reports/excitation_recoverability/result.json'; data=json.loads(source.read_text())
     providers=['mit','but','ace','openair']; metrics=[('edc_rmse_db','EDC RMSE (dB)'),('abs_c50_error_db','|C50 error| (dB)'),('abs_edt_error_s','|EDT error| (s)'),('stft_logmag_mse','STFT log-mag MSE')]

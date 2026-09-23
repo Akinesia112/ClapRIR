@@ -12,7 +12,7 @@ from scipy.io import wavfile
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[1]
 REPORT=ROOT/'reports/real_clap_and_phone_figures';OUT=ROOT/'publication/figures'
 def main():
  selection=json.loads((REPORT/'provenance.json').read_text())

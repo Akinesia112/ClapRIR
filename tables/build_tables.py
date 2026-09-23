@@ -3,7 +3,7 @@
 import csv,json,sys
 from pathlib import Path
 import numpy as np
-ROOT=Path(__file__).resolve().parents[2]; sys.path.insert(0,str(ROOT/'experiments'))
+ROOT=Path(__file__).resolve().parents[1]; sys.path.insert(0,str(ROOT/'experiments'))
 from matched_estimator_report import load,collapse
 OUT=Path(__file__).resolve().parent/'tables'
 P=('shoebox','mit','but','ace','openair'); LABEL={'shoebox':'Shoebox','mit':'MIT','but':'BUT','ace':'ACE','openair':'OpenAIR'}

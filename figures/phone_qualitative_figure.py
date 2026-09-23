@@ -9,11 +9,15 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FixedLocator, FixedFormatter, NullLocator
 from matplotlib.text import Text
 
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[1]
 R=ROOT/'reports/phone_spectral_analysis'; F=ROOT/'publication/figures'
 MODES=('P1','P2','P3','A1','A2','A3','A1-','A1+')
 ROOMS=('Medium-size meeting room','Highly reverberant hallway')
 SR=44100; N=39690; HI=15000
+# Temporal display window. 250 ms cut the highly reverberant hallway off only
+# ~19 dB into its decay. Every selected recording has real samples past 950 ms
+# (min valid_samples 42116), so 500 ms needs no zero padding.
+DISPLAY_MS=500; DISPLAY_SAMPLES=round(DISPLAY_MS/1000*SR)
 
 def spectrum(waves, normalize=True):
  f=np.fft.rfftfreq(N,1/SR); p=np.abs(np.fft.rfft(waves[:,:N].astype(float),axis=1))**2
@@ -46,9 +50,9 @@ def digital_spectrum(waves):
 def rms_envelope(signal):
  # Centered 221-sample (~5 ms) RMS, sampled every 44 samples (~1 ms).
  # Clip the first window to available signal samples, without zero padding.
- # Read the full saved waveform so the 250-ms endpoint uses real context.
+ # Read the full saved waveform so the endpoint uses real context.
  signal=np.asarray(signal,dtype=float)
- centers=np.unique(np.r_[np.arange(0,round(.25*SR)+1,44),round(.25*SR)]).astype(int)
+ centers=np.unique(np.r_[np.arange(0,DISPLAY_SAMPLES+1,44),DISPLAY_SAMPLES]).astype(int)
  half=110
  lo=np.maximum(centers-half,0);hi=np.minimum(centers+half+1,len(signal))
  energy=np.r_[0.,np.cumsum(signal*signal)]
@@ -160,7 +164,7 @@ def main():
     titles.append(axes[ri,0].text(0,1.035,room,
       transform=axes[ri,0].transAxes,fontsize=11,weight='semibold'))
    fig.subplots_adjust(left=.105,right=.975,top=.865,bottom=.135,hspace=.31,wspace=.13)
-   for ci,label in enumerate(('Recorded phone claps','Inferred RIRs')):
+   for ci,label in enumerate(('Recorded handclaps','Inferred RIRs')):
     pos=axes[0,ci].get_position()
     titles.append(fig.text((pos.x0+pos.x1)/2,.965,label,ha='center',fontsize=12,weight='semibold'))
    handles,labels=axes[0,0].get_legend_handles_labels()
@@ -208,7 +212,7 @@ def main():
       if is_spectrum:
        tx=f/1000;values=spectra[ci][ri*8+k];lw=1.25;alpha=1
       else:
-       values=signals[ri*8+k,:round(.25*SR)].astype(float)
+       values=signals[ri*8+k,:DISPLAY_SAMPLES].astype(float)
        tx=np.arange(len(values))/SR*1000;lw=.4;alpha=.65
        if scale=='db':
         tx,values=rms_envelope(signals[ri*8+k])
@@ -225,18 +229,18 @@ def main():
        ax.set_ylabel('Spectral power (dBFS)' if fully_unnormalized else 'Relative spectral power (dB)')
        titles.append(ax.text(0,1.035,ROOMS[ri],transform=ax.transAxes,fontsize=11,weight='semibold'))
      else:
-      ax.set_xlim(0,250);ax.set_xticks([0,50,100,150,200,250]);ax.set_xlabel('Time (ms)')
+      ax.set_xlim(0,DISPLAY_MS);ax.set_xticks([0,100,200,300,400,500]);ax.set_xlabel('Time (ms)')
       if scale=='db':
        ax.set_ylim(*rms_limits);ax.set_yticks(rms_ticks)
-       if ci==0:ax.set_ylabel('RMS level (dBFS)')
+       if ci==0:ax.set_ylabel('RMS level (dB)')
       else:
-       assert max(np.max(np.abs(x[:,:round(.25*SR)])),np.max(np.abs(h[:,:round(.25*SR)])))<1
+       assert max(np.max(np.abs(x[:,:DISPLAY_SAMPLES])),np.max(np.abs(h[:,:DISPLAY_SAMPLES])))<1
        ax.set_ylim(-1,1);ax.set_yticks([-1,-.5,0,.5,1])
        if ci==0:ax.set_ylabel('Digital amplitude')
      ax.tick_params(labelleft=ci==0);ax.grid(alpha=.2,lw=.5)
      titles.append(ax.text(.5,-.55/panel_height,'('+chr(ord('a')+row*2+ci)+')',
        transform=ax.transAxes,ha='center',va='top',fontsize=10))
-   for ci,label in enumerate(('Recorded phone claps','Inferred RIRs')):
+   for ci,label in enumerate(('Recorded handclaps','Inferred RIRs')):
     titles.append(fig.text(xleft[ci]+panel_width/width/2,.965,label,ha='center',fontsize=12,weight='semibold'))
    handles,labels=plots[0].get_legend_handles_labels()
    legend=fig.legend(handles,labels,loc='lower center',ncol=8,frameon=False,
@@ -246,22 +250,22 @@ def main():
      panel_labels=[chr(ord('a')+i) for i in range(8)],
      waveform_modes=list(MODES),waveform_curves_per_panel=[8,8,8,8],
      waveform_signals=['recorded_clap','inferred_rir'],
-     waveform_time_ms=[0,250],waveform_ticks_ms=[0,50,100,150,200,250],
+     waveform_time_ms=[0,DISPLAY_MS],waveform_ticks_ms=[0,100,200,300,400,500],
      waveform_panel_inches=[[panel_width,1.0]]*4,
      spectral_panel_inches=[[panel_width,spectral_height]]*4,
      frequency_ticks_khz=[.1,.3,1,3,10,15],spectral_ticks_db=spectral_ticks,
      normalization_hz=None if fully_unnormalized else [100,10000],display_db=spectral_limits,
      spectrum_normalization=('None per signal: one-sided FFT-bin power c[k]*abs(FFT(s))[k]**2/N**2, N=39690, c=2 except DC/Nyquist=1; mean within 1/12-octave bins, then 10 log10 with fixed digital power reference 1.' if fully_unnormalized else 'Original spectral convention: squared 39690-point FFT magnitude divided by each signal mean FFT-bin power over 0.1--10 kHz; 1/12-octave mean linear power, then 10 log10. No spectral-peak normalization.'),
-     waveform_scale=scale,waveform_y_axis='RMS level (dBFS)' if scale=='db' else 'Digital amplitude',
+     waveform_scale=scale,waveform_y_axis='RMS level (dB)' if scale=='db' else 'Digital amplitude',
      waveform_y_limits=rms_limits if scale=='db' else [-1,1],
      waveform_normalization='None: RMS of original digital samples, fixed amplitude reference 1' if scale=='db' else 'None: raw signed digital samples, no amplitude scaling',
      rms_window_samples=221 if scale=='db' else None,rms_hop_samples=44 if scale=='db' else None,
-     rms_boundary='Centered window clipped to available source support, divided by actual sample count; no zero padding. The 250-ms point uses the full saved waveform.' if scale=='db' else None,
+     rms_boundary='Centered window clipped to available source support, divided by actual sample count; no zero padding. The endpoint uses the full saved waveform.' if scale=='db' else None,
      waveform_db_definition='20 log10(RMS), fixed digital amplitude reference 1 and numerical amplitude floor 1e-12; no envelope-peak division' if scale=='db' else None,
      waveform_alignment='unchanged input-onset alignment; no prediction-dependent shift',
      spectral_curves_below_display_floor=[int((v<spectral_limits[0]).sum()) for v in spectra],
      rms_curves_below_display_floor=[int((v<rms_limits[0]).sum()) for v in temporal],
-     display_calibration=('All panels preserve original digital levels. dBFS uses fixed digital power reference 1 and digital amplitude reference 1; no per-signal gain. Not calibrated SPL. Spectral values are mean powers per FFT bin, not integrated octave-band powers or PSD per Hz.' if fully_unnormalized else 'Temporal panels preserve original digital levels, not calibrated SPL; RMS dBFS uses digital full scale 1 for every curve. Spectra retain the original per-signal mean-power normalization.'),
+     display_calibration=('All panels preserve original digital levels. dBFS uses fixed digital power reference 1 and digital amplitude reference 1; no per-signal gain. Not calibrated SPL. Spectral values are mean powers per FFT bin, not integrated octave-band powers or PSD per Hz.' if fully_unnormalized else 'Temporal panels preserve original digital levels, not calibrated SPL; RMS levels are in dB relative to digital full scale 1 for every curve. Spectra retain the original per-signal mean-power normalization.'),
      legend_columns=8,shared_legend_count=1,super_title=False)
    finish(fig,stem,plots,titles,legend,labels,details)
  if fully_unnormalized:
@@ -292,10 +296,10 @@ def main():
    ],
    rms_operations=[
     'Original saved digital samples; unchanged onset alignment.',
-    'R[m] = sqrt(sum_{n in W_m} s[n]**2 / len(W_m)), centered 221-sample window, centers every 44 samples plus the exact 250-ms endpoint; boundary windows use available real samples.',
+    'R[m] = sqrt(sum_{n in W_m} s[n]**2 / len(W_m)), centered 221-sample window, centers every 44 samples plus the exact endpoint; boundary windows use available real samples.',
     'L_R[m] = 20*log10(max(R[m],1e-12) / 1). Common digital amplitude reference 1. No division by max(R), and no maximum/mean subtraction.',
    ],
-   waveform_operations=['Plot s[n] directly against 1000*n/44100 ms over the existing 0--250-ms display crop; no amplitude operations.'],
+   waveform_operations=['Plot s[n] directly against 1000*n/44100 ms over the 0--500-ms display crop; no amplitude operations.'],
    no_per_signal_normalization=True,no_peak_mean_median_subtraction=True,no_output_gain_fitting=True,new_inference=0,
    spectrum_parseval_check='Passed: sum of one-sided bin powers equals mean square original waveform.',
    doubled_input_gain_shift_db=expected_shift,gain_preservation_check='Passed for all 32 spectra and RMS envelopes.',
@@ -331,11 +335,11 @@ def main():
  out={'status':'rendered-awaiting-visual-review','rooms':list(ROOMS),'modes':list(MODES),'time_modes':list(MODES),
   'frequency_display_hz':[100,15000],'normalization_hz':[100,10000],'spectrum_window_seconds':[0,.9],
   'spectrum':'All spectral panels use the original mean FFT-bin power normalization over 0.1--10 kHz and shared axes; temporal panels have no per-signal scaling.',
-  'time_display_ms':[0,250],'time_display_normalization':'Combined figures: no per-signal scaling. RMS uses 20 log10(RMS) with fixed digital reference 1; linear uses original signed samples.',
+  'time_display_ms':[0,DISPLAY_MS],'time_display_normalization':'Combined figures: no per-signal scaling. RMS uses 20 log10(RMS) with fixed digital reference 1; linear uses original signed samples.',
   'selection_rule':'unclipped; highest input-only pre-handclap SNR per room/mode before inference',
   'records':records,'new_inference':False,'spectrogram_main_paper':False,
   'outputs':[f'publication/figures/phone_qualitative_spectrum_{x}.{e}' for x in ('8modes','3modes','time','only') for e in ('pdf','png')]}
  (R/'compact_figure_report.json').write_text(json.dumps(out,indent=2)+'\n')
- (R/'compact_figure_report.md').write_text('# Phone qualitative compact figures\n\nDisplay is 0.1--15 kHz. Combined figures retain original mean-power spectral normalization; only temporal panels use unnormalized digital levels. The combined time panels show all eight frozen modes over 0--250 ms as unnormalized RMS levels or original signed samples. All selected recordings are unclipped and use the frozen input-only pre-handclap-SNR rule. No inference was run.\n')
+ (R/'compact_figure_report.md').write_text('# Phone qualitative compact figures\n\nDisplay is 0.1--15 kHz. Combined figures retain original mean-power spectral normalization; only temporal panels use unnormalized digital levels. The combined time panels show all eight frozen modes over 0--500 ms as unnormalized RMS levels or original signed samples. All selected recordings are unclipped and use the frozen input-only pre-handclap-SNR rule. No inference was run.\n')
  print('WROTE',len(out['outputs']),'artifacts')
 if __name__=='__main__':main()

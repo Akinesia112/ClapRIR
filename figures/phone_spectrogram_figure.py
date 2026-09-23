@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'reports/phone_spectral_analysis'
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'reports/phone_spectral_analysis'
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def main():
  z=np.load(OUT/'spectrogram_data.npz');t=z['time_seconds'];f=z['frequency_hz'];groups=[z['recorded_db'],z['inferred_db']]

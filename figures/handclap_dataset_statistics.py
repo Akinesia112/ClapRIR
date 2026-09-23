@@ -7,7 +7,7 @@ import soundfile as sf
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'reports/e0_characterization'
+ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'reports/e0_characterization'
 def main():
     OUT.mkdir(exist_ok=True); base=ROOT/'data/real_claps'; meta=base/'metadata.csv'
     records=[r for r in csv.DictReader(meta.open()) if r['tier']=='clean' and r['primary_channel']=='3']

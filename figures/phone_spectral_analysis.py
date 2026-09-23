@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 from scipy.io import wavfile
 from scipy.signal import resample_poly,welch,stft
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'reports/phone_spectral_analysis'
 OLD=ROOT/'reports/post_meeting_phone_spectral'
 MODES=('P1','P2','P3','A1','A2','A3','A1-','A1+')

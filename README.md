@@ -75,6 +75,9 @@ python -m claprir.training.train_rir_estimator --stage train \
 python experiments/single_clap_benchmark.py       # the main results table
 python experiments/cropped_excitation_baseline.py # cropped-excitation baselines
 python experiments/energy_decay_metric_recompute.py
+python experiments/simulated_test_expansion.py    # 216 held-out simulated RIRs
+python experiments/simulated_test_expansion_noisy.py
+python experiments/phone_spectral_consistency.py  # real-world consistency metric
 python figures/benchmark_comparison_figures.py
 python tables/build_tables.py
 ```
@@ -82,6 +85,17 @@ python tables/build_tables.py
 Every experiment script writes a self-describing report directory containing a
 `result.json`, the per-example and per-room CSVs behind each number, and a README
 stating what was run.
+
+`simulated_test_expansion.py` enlarges the simulated test set from the four
+held-out rooms of the frozen benchmark to 216, generated from a different bank
+seed and asserted not to coincide with the rooms the model trained on, so it
+needs no retraining. Its protocol is fixed in the report's
+`preregistration.json` before generation.
+
+`phone_spectral_consistency.py` measures how far apart the estimates for 40
+different handclaps in one room are, using the spectra of the qualitative
+figure. Phone recordings have no paired reference RIR, so it measures agreement
+between estimates, not reconstruction accuracy.
 
 Three modules under `claprir.datasets` read the handclap split at import time, so
 they require `data/` to be present and the repository root as the working

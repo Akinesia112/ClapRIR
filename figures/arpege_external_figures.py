@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.ticker import AutoMinorLocator
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'experiments')]
 from arpege_external_evaluation import REPORT, METRICS, read_csv, write_csv, write_json, sha, verify_lock
 from claprir.metrics.lundeby_truncation import edc_truncated

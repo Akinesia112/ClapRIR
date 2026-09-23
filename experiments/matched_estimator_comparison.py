@@ -24,7 +24,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 from claprir.models.flow_sampler import logsnr_grid, _churn_step                  # noqa: E402
 from claprir.metrics.lundeby_truncation import edc_truncated                                  # noqa: E402
 from claprir.metrics.room_acoustics import diagnosis_metrics

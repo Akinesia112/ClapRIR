@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'reports/flow_audit_corrected'; P=['shoebox','mit','but','ace','openair']
+ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'reports/flow_audit_corrected'; P=['shoebox','mit','but','ace','openair']
 def read(pattern):
     rows=[]
     for p in sorted(OUT.glob(pattern)): rows.extend(csv.DictReader(p.open()))

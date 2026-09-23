@@ -4,7 +4,7 @@ import csv,json,sys,hashlib
 from pathlib import Path
 import numpy as np
 import torch
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'experiments')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'experiments')]
 from matched_estimator_comparison import load,flow_sample,FLOW,REG
 from excitation_recoverability import crop_excitation
 from claprir.metrics.deconvolution import regularized_deconvolution

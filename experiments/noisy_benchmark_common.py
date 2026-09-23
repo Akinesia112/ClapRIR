@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / 'reports/noisy_controlled_benchmark'
 SR = LENGTH = 44100
 EVAL_SNRS = (20., 30., 40.)

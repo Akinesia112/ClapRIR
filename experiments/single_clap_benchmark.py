@@ -20,7 +20,7 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from claprir.metrics.room_acoustics import (echo_density_profile, edt_seconds,
                                          stft_magnitude_errors)

@@ -4,7 +4,7 @@ import csv,json,sys
 from pathlib import Path
 import numpy as np
 import torch
-ROOT=Path(__file__).resolve().parents[2]; sys.path.insert(0,str(ROOT/'src'))
+ROOT=Path(__file__).resolve().parents[1]; sys.path.insert(0,str(ROOT/'src'))
 from claprir.training.train_rir_estimator import RunConfig,load_model
 OUT=ROOT/'reports/real_clap_room_evaluation/results/examples.npz'
 def main():

@@ -11,7 +11,7 @@ import numpy as np
 import torch
 from scipy.io import wavfile
 from scipy.signal import resample_poly
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/'src'),str(ROOT/'experiments')]
 from matched_estimator_comparison import load,flow_sample
 from claprir.metrics.lundeby_truncation import edc_truncated

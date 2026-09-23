@@ -13,7 +13,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.ticker import AutoMinorLocator
-ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT/'src')]
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'src')]
 from claprir.metrics.lundeby_truncation import edc_truncated
 REF=dict(color='black',linestyle=(0,(4,2)),zorder=5)
 OUT=ROOT/'publication/figures'
